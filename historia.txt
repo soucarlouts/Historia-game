@@ -81,4 +81,15 @@ IF= N : TEXT; seu coração se enche de medo, suas mãos tremulas seguram sua ar
 AÇÃO: você nao faz nada
 
 IF= S : TEXT; mesmo com medo você tem fé em si mesmo agarra a sua arma com o proprio coração e ataca
-}batato
+AÇÃO: Rola o dado para atacar. [nesta batalha vai ser 100% de chance de dar certo]
+AÇÃO: ataque [variavel, dano + rolagem de dado]
+
+IF= Atack succescifull kill bear.
+IF= bear is killed show TEXT.
+
+Narrador- Você sai da batalha vitorioso, seu coração se acalma a medida que a vida sai dos olhos do urso.
+Você saqueia o corpo do urso.
+
+
+
+}
