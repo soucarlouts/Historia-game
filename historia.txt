@@ -10,19 +10,19 @@ G- E, o que tu és?
 
 classes = [Paladino - Feiticeiro - Arqueiro]
 
-G- Ah, mas é claro, com essas vestimentas era obvio!
+G- Ah, mas é claro, com essas vestimentas era óbvio!
 
-G- o que fazes aqui "nome" ?
+G- o que fazes aqui "nome"?
 
-N- eu... eu nao me lembro.
+N- eu... eu não me lembro.
 
-G- o senhor/a não se lembra de nada?
+G- o senhor não se lembra de nada?
 
-N- não.
+N- não...
 
 G- Bom, por enquanto, vamos lavar essas roupas e limpar seus ferimentos, você esta na pior.
 
-N- Quem é você, e por que esta me ajudando?
+N- Quem é você, e por quê esta me ajudando?
 
 G- sou apenas uma garota do campo, o ajudei pois senti que era a coisa certa a se fazer.
 
@@ -31,9 +31,8 @@ N- O-Obrigado.
 Narrador- A mulher estrangeira lava suas vestimentas enquanto você se limpava, quando saiu de seu banho
 achou suas vestimentas limpas, porem no estado que estavam, eram apenas trapos, e somente por pouco
 lembrava sua forma antiga.
-Mas voce nao se lembra do que aconteceu, com apenas seu cajado e amuleto voce decide agradecr a mulher
-estrangeira e partir para tentar descobrir o que aconteceu, mas antes voce pede para a mulher lhe mostrar
-onde ela o achou.
+Mas voce não se lembra do que aconteceu, com apenas seu/a [cajado, espada, arco] e [amuleto, armadura, aljava] voce decide agradecer a mulher estrangeira e partir para tentar descobrir o que aconteceu, mas antes voce à pede para lhe mostrar
+onde o achou.
 
 G- Bom, só posso lhe trazer até aqui, boa sorte guerreiro, que a luz de !THALMOR! brilhe sobre ti.
 
@@ -41,7 +40,7 @@ Narrador- E assim comça sua jornada, com apenas seu/sua [Espada - Cajado - Arco
 você decide investigar.
 
 Narrador- você esta na entrada de uma floresta cercada por arvores frutiferas, suas frutas
-sao de cores variadas, e exalam o melhor perfume que seu nariz ja sentiu
+sao de cores variadas, e exalam o melhor perfume que seu nariz ja sentiu.
 você esta com fome, deseja comer?
 
 [IN GAME OPTION = IGO - S/N?]
@@ -73,12 +72,12 @@ ai ok, como eu pensei que poderia funcionar a questão dos niveis, o inicial ser
 acabou de evoluir, e ir aumentando de 20% em 20% qualquer coisa me deem feedback no grupo
 )
 
-Narrador- você olha mais um pouco ao seu redor e ve marcas de batalha nas arvores
+Narrador- você olha mais um pouco ao seu redor e vê marcas de batalha nas árvores
 o que parecem ser garras, dileceraram pela madeira em volta, você investiga.
 
-Narrador- enquanto você olha as arvores, ouve pegadas se aproximando, é algo grande.
-Você saca sua/seu arma, e logo em seguida ouve um grunido que faz seu peito resonar com medo.
-É um enorme urso ensanguentado pula de fora da floresta, em sua pelagem densa à marcas de espada
+Narrador- enquanto você olha as árvores, ouve pegadas se aproximando, é algo grande!
+Você saca sua/seu [cajado, espada, arco] e logo em seguida ouve um grunido que faz seu peito resonar com medo.
+e um enorme urso ensanguentado pula de fora da floresta, em sua pelagem densa à marcas de espadas
 apenas olhar para tal criatura o enche de medo.
 
 {BATALHA:
@@ -86,9 +85,9 @@ apenas olhar para tal criatura o enche de medo.
 SEU TURNO: ATACAR? S/N
 
 IF= N : TEXT; seu coração se enche de medo, suas mãos tremulas seguram sua arma com falta de confiança
-AÇÃO: você nao faz nada
+AÇÃO: você nao faz nada...
 
-IF= S : TEXT; mesmo com medo você tem fé em si mesmo agarra a sua arma com o proprio coração e ataca
+IF= S : TEXT; mesmo com medo você tem fé em si mesmo agarra a sua arma com o próprio coração e ataca
 AÇÃO: Rola o dado para atacar. [nesta batalha vai ser 100% de chance de dar certo]
 AÇÃO: ataque [variavel, dano + rolagem de dado]
 
@@ -99,7 +98,9 @@ Narrador- Você sai da batalha vitorioso, seu coração se acalma a medida que a
 Você inspeciona o corpo do urso e acha varias lascas de espada em seu couro duro, certamente você reconhece
 mas não consegue se lembrar do por que.
 
-Narrador- você nao ve outra opção alem de seguir pelo caminho do qual surgiu o urso, até porque
-é sua unica pista, talvez aqueles que tenham atacado o urso antes de voce estejam la ainda.
+Narrador- você não vê outra opção alem de seguir pelo caminho do qual surgiu o urso, até porque
+é sua unica pista, talvez aqueles que tenham atacado o urso antes de você estejam la ainda.
 Você decide adentrar a floresta.
+
+(nesta parte pode ser que colocar algo como: inspencionar urso? pegar a pelugem para cobrir-se do frio, etc.. seria algo criativo)
 }
