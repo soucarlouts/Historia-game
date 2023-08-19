@@ -17,7 +17,7 @@
 - um corvo, uma luz amarela envolveu o guerreiro sem nome, e nunca mais foi visto, porem sua foice voltou 
 - a este mundo, e vaga pela noite como um espirito.
 
--
+- 
 -
 -
 -
@@ -64,5 +64,21 @@
 -
 -
 -
-- CAJADO DE DESPIA - Feiticeiro
-- ARCO DE LUTHER - Arqueiro
+- CAJADO DE MADEIRA - Feiticeiro
+- ARCO DE MADEIRA - Arqueiro - arco simples feito com madeira da pior qualidade e barbante.
+
+- ARCO DE CAÇA - arco feito de uma madeira forte porem maleavel, perfeita para arcos de caça.
+
+- BESTA - arco mecanizado feito de madeira e metal, tecnologia e engenharia ao seu maximo.
+
+- ARCO DE CERVO - arco feito dos chifres de um cervo, seu material permite um arco com maior potencia.
+
+- 
+-
+-
+-
+-
+-
+-
+-
+-

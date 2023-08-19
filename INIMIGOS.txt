@@ -1,33 +1,57 @@
+- URSO GRANDE - urso grande que aparecera no inicio do jogo, sua vida pode ser apenas 1 ponto de hp
+
+- CERVO - um belo cervo com chifres magesticos, talvez sirvam de material para criação de uma arma, interesante.
+
+- PIXIES - uma fada, pequena e brilhante como uma estrela no céu, n se deixe enganar, essas fadas sao territoriais e 
+- detestam outras raças, apenas toleram os elfos da floresta por pura conveniencia.
+
+- ELFOS - criaturas belas de estatura alta, são esguios e tem olhos de animais diversos, seus olhos refletem 
+- sua propia alma e são tão diversos como as digitais humanas, são seres inteligentes, bons em magia e arquearia
+- principalmente, tem orelhas mais protuberantes e ossos da mandibula mais definidos.
+
+- ELFO ARQUEIRO - um elfo que se desenvolveu principalmente na habilidade de arquearia, mais dificeis de 
+- detectar do que um elfo comum. 
+
+- ELFO SENTINELA - um elfo que desenvolveu-se na exploração da floresta, conhecem na inteira como a palma 
+- de suas mãos, evolui na arte da espada e escudo,  e tem força fisica maior do que outros elfos.
+
+- ELFO FEITICEIRO - um tipo de habilidade elfica mais rara de se encontrar, é a magica, conhecida por seu 
+- poder destrutivo, e capacidade de destruir vilarejos inteiros em apenas horas, cuidado ao encontrar
+- um Elfo Feiticeiro, pois de longe são os mais poderosos
+
+- INSETO GIGANTESCO LUVE - inseto gigante da arquearia elfica, são usados para locomoção silenciosa na floresta,
+- e combate mais agil, sua fisionomia se assemelha a aquela de um louva-a-deus
+- esguios com patas em forma de foice, reforçados por uma armadura elfica encantada, que permite 
+- o controle do inseto aos elfos arqueiros.
+
+- INSETO GIGANTESCO BEÁZZ - inseto gigante da vanguarda elfica, usados para locomoção e combate mais pesado,
+- são mais lentos e barulhentos do que os insetos LUVE, porém tem uma carapaça dura como o proprio aço,
+- os sentinelas elficos combinam seus ataques de espada com a chifrada desees insetos, que em sua fisionomia,
+- assemelha-se a aquela de um besouro hercules.
+
+- DRUIDA - 
+
+- DOPLEGANGER -
+
+- ARVORE VIVA - 
+
+- ESPIRITO PERDIDO - 
+
+- TIGRE FLORESTAL -
+
+- MACACO VIOLENTO - 
+
+- PYTHON A COBRA -
+
+- COBRA VENENOSA -
+
+- UNICORNIO -
+
+- MORCEGO -
+
+- RAIZ AMBULANTE -
+
 -
+
 -
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+
