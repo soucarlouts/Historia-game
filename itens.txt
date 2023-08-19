@@ -1,6 +1,58 @@
-- ESPADA DE TAIA - Guerreiro
-- CAJADO DE DESPIA - Feiticeiro
-- ARCO DE LUTHER - Arqueiro
+- ESPADA DE FERRO = espada de ferro inicial, tipica dos cavaleiros VAARSET que servem o reino de drusila.
+
+- ESPADA DE MADEIRA = ... por fazer
+
+- RAPIEIRA = espada feita de material metalico mais maleavel, é fina e agil, como a ponta de uma agulha.
+
+- MONTANTE = espada grande para ser empunhada com duas mãos, feita de material metalico pesado-
+- pode partir uma grande rocha ao meio.
+
+- KATANA = espada com leve curva, recompensa a agilidade com cortes precisos e afiação impecavel-
+- feita de um metal desconhecido, nao deve ser deste continente.
+
+- FOICE = uma arma temida dentro do reino de drusila, sua forma assustadora e recurvada impõem medo até
+- no mais bravo cavaleiro.
+- nas terras mais ao sul de onde passa nossa historia é contado o mito, de que um guerreiro agil como um
+- gato na noite, desafiou THALMOR a divindade da luz e da fertilidade com uma foice negra como a pena de
+- um corvo, uma luz amarela envolveu o guerreiro sem nome, e nunca mais foi visto, porem sua foice voltou 
+- a este mundo, e vaga pela noite como um espirito.
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 - 
 -
 -
@@ -12,15 +64,5 @@
 -
 -
 -
--
--
--
--
--
--
--
--
--
--
--
--
+- CAJADO DE DESPIA - Feiticeiro
+- ARCO DE LUTHER - Arqueiro

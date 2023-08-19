@@ -24,7 +24,7 @@ G- Bom, por enquanto, vamos lavar essas roupas e limpar seus ferimentos, você e
 
 N- Quem é você, e por que esta me ajudando?
 
-G- sou apenas uma garota, o ajudei pois senti que era a coisa certa a se fazer.
+G- sou apenas uma garota do campo, o ajudei pois senti que era a coisa certa a se fazer.
 
 N- O-Obrigado.
 
@@ -35,7 +35,7 @@ Mas voce nao se lembra do que aconteceu, com apenas seu cajado e amuleto voce de
 estrangeira e partir para tentar descobrir o que aconteceu, mas antes voce pede para a mulher lhe mostrar
 onde ela o achou.
 
-G- Bom, só posso lhe trazer até aqui, boa sorte guerreiro, que a luz de thalmor brilhe sobre ti.
+G- Bom, só posso lhe trazer até aqui, boa sorte guerreiro, que a luz de !THALMOR! brilhe sobre ti.
 
 Narrador- E assim comça sua jornada, com apenas seu/sua [Espada - Cajado - Arco] em mãos e trapos em seu corpo
 você decide investigar.
