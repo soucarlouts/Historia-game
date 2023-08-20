@@ -104,3 +104,5 @@ Você decide adentrar a floresta.
 
 (nesta parte pode ser que colocar algo como: inspencionar urso? pegar a pelugem para cobrir-se do frio, etc.. seria algo criativo)
 }
+{RESPOSTA: Gabriel, não faria sentido, como ele teria esses itens? para poder tirar a pelagem dele, seria um furo na historia
+}
