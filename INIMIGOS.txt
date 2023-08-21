@@ -35,19 +35,13 @@
 
 - ARVORE VIVA - arvore
 
-- ESPIRITO PERDIDO - 
-
-- TIGRE FLORESTAL -
-
-- MACACO VIOLENTO - 
-
 - PYTHON A COBRA -
 
 - COBRA VENENOSA -
 
 - UNICORNIO -
 
-- MORCEGO -
+- MORCEGO - alterar: nota pessoal.
 
 - RAIZ AMBULANTE -
 
