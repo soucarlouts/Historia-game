@@ -1,4 +1,4 @@
--fase 1: URSO
+-fase 1: URSO GRANDE - urso grande que aparecera no inicio do jogo, sua vida pode ser apenas 1 ponto de hp
 -
 -
 -
