@@ -106,3 +106,12 @@ Você decide adentrar a floresta.
 }
 {RESPOSTA: Gabriel, não faria sentido, como ele teria esses itens? para poder tirar a pelagem dele, seria um furo na historia
 }
+
+============================================================================================================
+------------------------------------------------------------------------------------------------------------
+____________________________________________________________________________________________________________
+
+Ao adentrar a floresta você vê um labirinto de arvores, você mal entrou e ja se sente perdido tendo apenas as 
+marcas de garra nas arvores, o som ominoso que você ouve ja é o suficiente para sentir o mau agouro que lhe espera
+porem, voce deve prosseguir, afinal, não é como se lhe sobrasse muita escolha.
+Você segue as marcas de forma quase linear
