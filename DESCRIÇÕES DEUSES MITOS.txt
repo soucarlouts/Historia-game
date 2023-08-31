@@ -14,8 +14,14 @@
 - TARTAREA UMBRA - deus omnis mali, per umbram tuam omne quod bonum est convertat malum,
 - omne quod sanctificatum est, tuo mucrone in maledictum vertitur, tartarea umbra
 - deus maledictorum et omnia mala.
+<<<<<<< HEAD
 -
 -
+=======
+
+-KASHTIRA - DEUS da justiça, com sua espada vaga todo o mundo com sua onipresença, matando todos que querem atrasar
+seu caminho...(Continua daqui ou varia a historia)
+>>>>>>> 9fafc15fcc157c086232b462bd4f9a6e42698b07
 -
 -
 -
