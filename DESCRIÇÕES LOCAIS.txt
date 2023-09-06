@@ -1,10 +1,9 @@
--FOLRESTA PARTE INICIAL: A grande floresta, de nome desconhecido para nosso protagonista, pelo menos 
-- neste momento inicial, grandes arvores frutiferas, belas e perfumadas, por mais que sejam saborosas
-- são quase como uma armadilha para criaças e até guerreiros desesperados por uma fonte de alimento,
-- e é dito ser uma armadilha, pois seus sabores viciam suas vitimas e como uma rapida droga, deixa os
-- sentidos humanos mais aguçados, como o paladar e o oufato, enquanto diminui a perçepcão de outros
-- como a audição e visão, sua quimica ainda é desconhecida pelos alquimistas, porem suas propriedades
-- ja são usadas para remedios.
+-FOLRESTA PARTE INICIAL: A grande floresta de druida, que contem as grandes arvores frutiferas,
+- belas e perfumadas, por mais que sejam saborosas são quase como uma armadilha para criaças e até 
+  guerreiros desesperados por uma fonte de alimento e é dito ser uma armadilha, pois seus sabores 
+  viciam suas vitimas e como uma rapida droga, deixa os sentidos humanos mais aguçados, como o paladar
+  e o oufato, enquanto diminui a perçepcão de outros, como a audição e visão, sua quimica ainda é desconhecida
+  pelos alquimistas, porem suas propriedades ja são usadas para remedios.
 -
 - A floresta em si, é um labirinto, a unia forma de realmente conhecer esta floresta, é morando ou caçando aqui
 - e isso é mostrado pelos ēlifi nome dos nativos elficos da floresta, aqui caçam, pescam, e plantam suas arvores,
