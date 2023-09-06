@@ -121,3 +121,74 @@ estava na floresta, por que estava desacordado?
 voçê sente medo...
 seu estomago revira ao sentir o cheiro podre 
 de carne
+depois de andar em direção ao cheiro, voce vê corpos dilacerados, armaduras que outrorá foram brilhantes e 
+reluzentes, agora foscas e ensanguentadas, o sangue está seco, os corpos ja iniciaram a decomposição, por 
+isso o cheiro, voçe tampa sua boca e nariz, o local está insuportavel.
+
+mas uma coisa lhe chama atencao, um envelope de carta perto de um dos corpos, você pega? 
+
+[sim]- voçe se agacha perto de um dos corpos e pega o envelope, ele esta vazio, porém não é um
+envelope comum, a marca de cera, você a reconhece, é da realeza Druisiana.
+
+[não]- voçê não pega a carta.
+
+após isso, voçê ve repara em algo muito incomum, em uma das carcaças, você ve aquilo que se asemelha a uma seta
+você investiga?
+
+[sim]- novamente, você se abaixa e pega á até então desconhecida seta, parece uma flecha comum, mas
+voce nao a reconhece de lugar algum. voçê á guarda. logo após consegue ouvir o som de uma das arvores gemendo e rangendo,
+uma arvore viva se revela, você nao tem escolha se não lutar.
+
+[não]- voçê não pega a seta, porem consegue ouvir o som de uma das arvores gemendo e rangendo,
+uma arvore viva se revela, você nao tem escolha se não lutar.
+
+{iniciar batalha, não sei quem vai decidir os ataques dos monstros nem o hp, nem mana, isso voçês decidem entre si
+mas eu n quero fazer esta parte.}
+
+Após a batalha, voçê sente um par de olhos em seu derredor, mesmo depois de procurar, voce não acha nada
+sua nova vida e jornada mal começaram, e mesmo assim, o peso do medo lhe consome logo de inicio, seu coração
+se enche de incerteza e voçe nao sabe oq fazer, porem não tem tempo para pensar, nem ao mesmo chorar.
+
+VOCÊ OUVE UM SOM ESTRIDENTE COMO AQUELE DA DANÇA DE UM CHICOTE, O QUE VOCE FAZ???!!!
+
+[SE MOVER] - vive
+
+[DEITAR] - morre
+
+[OLHAR EM DIREÇÃO AO SOM] - morre
+
+Você se move o mais rapido que seu corpo cansado aguenta.
+Você ve passando diante de teus olhos, uma flecha tão rapida como o som.
+Você se alivia porem tenta achar de onde veio o disparo, mas apenas vê folhas caindo de todos os 
+lados, parece que o proprio vento tentou lhe acertar.
+
+O que você faz? 
+
+[preparar se para um proximo disparo?] - com sua arma em mãos você se prrepara para aquilo que pode vir, e não
+mais breve do que o possivel, uma flecha vem em sua direção, você consegue se desviar, porem sem ter noção 
+alguma surge atras de você uma figura esguia e lhe segura o imobilizando e o impedindo de se mover, voce foi 
+capturado.
+
+[fugir?] - você se corre procurando abrigo entre as arvores, e cada vez mais parece estar correndo em
+um labirinto, você ouve os movimentos nas arvores e tem medo, voce se acha ao meio de uma clareira, voce esta 
+aberto a qualquer tipo de ataque, e seu cansasso não o permite correr mais. porem sem ter aviso previo
+alguma surge atras de você uma figura esguia e lhe segura o imobilizando e o impedindo de se mover, voce foi 
+capturado.
+
+[esconder se?] - Você corre buscando abrigo entre as arvores e você parcebe estar sendo seguido, o som move-se
+quase mais rapido do que voçê como se estivessem antecipando seus passos. porem sem ter aviso previo
+alguma surge atras de você uma figura esguia e lhe segura o imobilizando e o impedindo de se mover, voce foi 
+capturado.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
