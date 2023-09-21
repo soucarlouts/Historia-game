@@ -1,6 +1,10 @@
-import random
+import random    
 
-dano_fixo = 10
+danos_fixos = {
+    "Corte": 10,
+    "Corte_Rapido": 5,
+    "Corte_Pesado":15,
+}
 
 def rolar_dado():
     return random.randint(1, 10)
@@ -11,11 +15,25 @@ def calcular_multiplicador(resultado):
         return resultado / 5.0
     else:
         return resultado - 5 / 5.0
-    
-resultado = rolar_dado()
-multiplicador = calcular_multiplicador(resultado)
-dano_total = dano_fixo + (dano_fixo * multiplicador)
+print("Ataques Disponiveis: ")
+for tipo, valor in danos_fixos.items():
+    print(f"{tipo}: dano fixo {valor}")
+        
+tipo_ataque_escolhido = input("Escolha Seu Ataque!!! ")
 
-print(f"resultado do dado: {resultado}")
-print(f"multiplicador de dano: {multiplicador}")
-print(f"dano total é: {dano_total}")
+if tipo_ataque_escolhido in danos_fixos:
+    dano_fixo = danos_fixos[tipo_ataque_escolhido]
+    
+    resultado = rolar_dado()
+    multiplicador = calcular_multiplicador(resultado)
+        
+    resultado = rolar_dado()
+    multiplicador = calcular_multiplicador(resultado)
+    dano_total = dano_fixo + (dano_fixo * multiplicador)
+
+    print(f"resultado do dado: {resultado}")
+    print(f"multiplicador de dano: {multiplicador}")
+    print(f"ataque escolhido ({tipo_ataque_escolhido})")
+    print(f"dano total é: {dano_total}")
+else:
+    print("Tipo de ataque escolhido não existe")
