@@ -1,9 +1,9 @@
 import random    
 
 danos_fixos = {
-    "Corte": 10,
-    "Corte_Rapido": 5,
-    "Corte_Pesado":15,
+    "C": 10,
+    "CR": 5,
+    "CP":15,
 }
 
 def rolar_dado():
