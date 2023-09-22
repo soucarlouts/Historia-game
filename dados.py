@@ -1,5 +1,8 @@
-import random    
+import random
 
+print("Corte = C\n")
+print("Corte Rapido = CS\n")
+print("Corte Pesado= CP\n")
 danos_fixos = {
     "C": 10,
     "CR": 5,
