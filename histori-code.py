@@ -6,9 +6,17 @@ import curses
 pause = 1.0
 pause2 = 2.0
 pause3 = 3.0
+armas = None
+acessorios = None
+
 def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
+
+def fade_in_text(texto, velocidade):
+    for i in range(len(texto)):
+        print(texto[i], end='', flush=True)
+        time.sleep(velocidade)
 
 #90m cinza
 #91m vermelho
@@ -19,11 +27,6 @@ resultado_dados = rolar_dado()
 #96m azul claro
 #97m branco
 
-def fade_in_text(texto, velocidade):
-    for i in range(len(texto)):
-        print(texto[i], end='', flush=True)
-        time.sleep(velocidade)
-
 def clear_screen():
     if os.name == 'nt':
         os.system('cls')
@@ -32,18 +35,18 @@ def clear_screen():
 
 texto = '''\033[91m
 
-██████╗ ██████╗ ██╗   ██╗███████╗██╗██╗      █████╗ 
-██╔══██╗██╔══██╗██║   ██║██╔════╝██║██║     ██╔══██╗
-██║  ██║██████╔╝██║   ██║███████╗██║██║     ███████║
-██║  ██║██╔══██╗██║   ██║╚════██║██║██║     ██╔══██║
-██████╔╝██║  ██║╚██████╔╝███████║██║███████╗██║  ██║
-╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝╚══════╝╚═╝  ╚═╝
-                 (rpg text game)\033[91m\n
-           Um mundo mágico de imaginação,
-        com textos que prendem seus jogadores
-            e exploram suas capacidades!\n'''
+ _|       ██████╗ ██████╗ ██╗   ██╗███████╗██╗██╗      █████╗        _|
+ _|       ██╔══██╗██╔══██╗██║   ██║██╔════╝██║██║     ██╔══██╗       _|
+ _|_/     ██║  ██║██████╔╝██║   ██║███████╗██║██║     ███████║     _/_|   
+ _|_/     ██║  ██║██╔══██╗██║   ██║╚════██║██║██║     ██╔══██║     _/_|
+ _|_/_/   ██████╔╝██║  ██║╚██████╔╝███████║██║███████╗██║  ██║   _/_/_|
+ _|_/_/_/ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝╚══════╝╚═╝  ╚═╝ _/_/_/_|
+                          (rpg text game)\033[91m\n
+                   Um mundo mágico de imaginação,
+                com textos que prendem seus jogadores
+                    e exploram suas capacidades!\n'''
 
-velocidade = 0.02
+velocidade = 0.010
 
 fade_in_text(texto, velocidade)
 time.sleep(1)
@@ -76,7 +79,9 @@ while True:
         print('Opção inválida. Por favor, escolha entre Paladino, Feiticeiro ou Arqueiro.')
         continue
 
-texto = ('\n\033[95mGarota\033[0m: Ah, mas é claro, com essas vestimentas era óbvio!')
+clear_screen()
+
+texto = ('\033[95mGarota\033[0m: Ah, mas é claro, com essas vestimentas era óbvio!')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -124,43 +129,33 @@ for letra in texto:
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = ('\n\033[94mVocê\033[0m: O-Obrigado...\n')
+texto = ('\n\033[94mVocê\033[0m: O-Obrigado...')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 
-opcoes_armas = ['Espada' ,'Cajado', 'Arco']
+clear_screen()
 
-while True:
-    classes = input('\nEscolha uma arma \033[92m(Espada, Cajado, Arco): \033[0m')
+def obter_armas_e_acessorios(classe):
+    match classe:
+        case "Paladino":
+            return "Espada", "Armadura"
+        case "Feiticeiro":
+            return "Cajado", "Amuleto"
+        case "Arqueiro":
+            return "Arco", "Aljava"
+        case _:
+            return "Classe não reconhecida", "Acessórios não disponíveis"
 
-    armas = classes.capitalize()
+classe_escolhida = classes
+armas, acessorios = obter_armas_e_acessorios(classe_escolhida)
 
-    if armas in opcoes_armas:
-        break
-    else:
-        print('Opção inválida. Por favor, escolha entre Espada, Cajado ou Arco.')
-        continue
-
-texto = (f'\n\033[93mNarrador\033[0m: Você pega seu/a {armas} e a limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
+texto = (f'\033[93mNarrador\033[0m: Você pega seu/a {armas} e limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 
-opcoes_acessorios = ['Armadura', 'Amuleto', 'Aljava']
-
-while True:
-    classes = input('\nEscolha um acessório \033[92m(Armadura, Amuleto, Aljava): \033[0m')
-
-    acessorios = classes.capitalize()
-
-    if acessorios in opcoes_acessorios:
-        break
-    else:
-        print('Opção inválida. Por favor, escolha entre Paladino, Feiticeiro ou Arqueiro.')
-        continue
-
-texto = (f'\n\033[93mNarrador\033[0m: Você equipa seu/a {acessorios} e reflete como tudo isso aconteceu, mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
+texto = (f'\033[93mNarrador\033[0m: Você equipa seu/a {acessorios} e reflete como tudo isso aconteceu, mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -170,7 +165,7 @@ texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas e
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
-time.sleep(pause)
+time.sleep(pause2)
 
 texto = ('\n\033[95mGarota\033[0m: Bom, depois dessa longa caminhada no bosque só posso lhe trazer até aqui. Boa sorte guerreiro, que a luz de \033[4mThalmor\033[0m brilhe sobre ti!')
 for letra in texto:
@@ -188,43 +183,64 @@ clear_screen()
 
 print('''
       \033[91m
-███████╗ █████╗ ███████╗███████╗     ██╗
-██╔════╝██╔══██╗██╔════╝██╔════╝    ███║
-█████╗  ███████║███████╗█████╗      ╚██║
-██╔══╝  ██╔══██║╚════██║██╔══╝       ██║
-██║     ██║  ██║███████║███████╗     ██║
-╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝     ╚═╝ 
+ _|     ███████╗ █████╗ ███████╗███████╗     ██╗     _|
+ _|     ██╔════╝██╔══██╗██╔════╝██╔════╝    ███║     _|
+ _|     █████╗  ███████║███████╗█████╗      ╚██║     _|
+ _|     ██╔══╝  ██╔══██║╚════██║██╔══╝       ██║     _|
+ _|     ██║     ██║  ██║███████║███████╗     ██║     _|
+ _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝     ╚═╝     _| 
 \033[91m\n''')
 input("\n\033[90mPressione Enter para começar a primeira fase...\033[0m")
 clear_screen()          
       
 
-texto = ('\n\033[93mNarrador\033[0m: você esta na entrada de uma floresta cercada por árvores frutiferas, suas frutas sao de cores variadas, e exalam o melhor perfume que seu nariz ja sentiu.')
+texto = ('\033[93mNarrador\033[0m: você está na entrada de uma floresta cercada por árvores frutiferas, suas frutas são de cores variadas, e exalam o melhor perfume que seu nariz ja sentiu!')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 time.sleep(pause)
 
-opcao_fome = input("\n\033[93mNarrador\033[0m: você esta com fome, deseja comer? ").upper()
+texto = "\n\033[93mNarrador\033[0m: você esta com fome, deseja comer? "
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+opcao_fome = input().upper()
 while True:
     if opcao_fome == "NAO":
         time.sleep(pause)
 
-        print("\033[93mNarrador\033[0m: Você decide seguir em frente.")
+        texto = ("\033[93mNarrador\033[0m: Você decide seguir em frente...")
+        for letra in texto:
+            print(letra, end='', flush=True)
+            time.sleep(0.05)
         break
     elif opcao_fome == "SIM":
         time.sleep(pause)
 
-        print("\033[93mNarrador\033[0m: você pega uma fruta estranha, aparência de maçã, porém com coloração de madeira. Você a morde, seu suco e sabor o revigoram.")
-        opcao_xp = input("Subir de Nível? ").upper()
+        texto = ("\033[93mNarrador\033[0m: você pega uma fruta estranha, aparência de maçã, porém com coloração de madeira. Você a morde, seu suco e sabor o revigoram.")
+        for letra in texto:
+            print(letra, end='', flush=True)
+            time.sleep(0.05)
+        texto = "\n\033[93mNarrador\033[0m: Subir de Nível? "
+        for letra in texto:
+            print(letra, end='', flush=True)
+            time.sleep(0.05)
+
+        opcao_xp = input().upper()
 
         if opcao_xp == "NAO":
             time.sleep(pause)
-            print("\033[93mNarrador\033[0m: Você armazenou o XP!")
+            texto = ("\033[93mNarrador\033[0m: Você armazenou o XP!")
+            for letra in texto:
+                print(letra, end='', flush=True)
+                time.sleep(0.05)
             break
         elif opcao_xp == "SIM":
             time.sleep(pause)
-            print("\033[93mNarrador\033[0m: Você subiu de nível!")
+            texto = ("\033[93mNarrador\033[0m: Você subiu de nível!")
+            for letra in texto:
+                print(letra, end='', flush=True)
+                time.sleep(0.05)
             break
         else:
             time.sleep(pause)
@@ -232,11 +248,12 @@ while True:
             continue
     else:
         print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
-        opcao_fome = input("Você está com fome, deseja comer? ").upper()
+        opcao_fome = input("\n\033[93mNarrador\033[0m: você esta com fome, deseja comer? ").upper()
+
 time.sleep(pause)
 clear_screen()
 
-texto = ('\033[93mNarrador\033[0m: você olha mais um pouco ao seu redor e vê marcas de batalha nas árvores o que parecem ser garras, com grandes árvores dilaceradas em volta, você investiga!')
+texto = ('\033[93mNarrador\033[0m: você olha e caminha mais um pouco ao seu redor e vê marcas de batalha nas árvores o que parecem ser garras, com grandes árvores dilaceradas em volta, você investiga!')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -248,21 +265,161 @@ for letra in texto:
     time.sleep(0.05)
 
 #BATALHA
-opcao_batalha= input("\n\033[93mNarrador\033[0m: Atacar? ").upper()
+texto = "\n\033[93mNarrador\033[0m: Atacar? "
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+opcao_batalha= input().upper()
 while True:
     if opcao_batalha == "NAO":
         time.sleep(pause)
-        print('\033[93mNarrador\033[0m: Seu coração se enche de medo, suas mãos tremulas seguram sua arma com falta de confiança, Mas você nao faz nada...')
+        texto = ('\033[93mNarrador\033[0m: Seu coração se enche de medo, suas mãos tremulas seguram sua arma com falta de confiança, o urso caminha para o atacar mas acaba se distraindo com um barulho alto na floresta e sai rugindo e correndo...\n')
+        for letra in texto:
+            print(letra, end='', flush=True)
+            time.sleep(0.05)
         break
     elif opcao_batalha == "SIM":
-        print("\033[93mNarrador\033[0m: Mesmo com medo você tem fé em si mesmo agarra a sua arma com o próprio coração e ataca!")
+        texto = ("\033[93mNarrador\033[0m: Mesmo com medo você tem fé em si mesmo agarra a sua arma com o próprio coração e ataca!")
+        for letra in texto:
+            print(letra, end='', flush=True)
+            time.sleep(0.05)
         time.sleep(pause)
-        if resultado_dados > 2:
-            print('\033[93mNarrador\033[0m: Sucesso no ataque, você matou o urso!')
+        if resultado_dados > 1:
+            print('\n\033[93mNarrador\033[0m: Sucesso no ataque, você matou o urso!')
+            print(letra, end='', flush=True)
+            time.sleep(0.05)
             break
         else:
-            print('\033[93mNarrador\033[0m: O grande urso o matou...')
+            print('\033[93mNarrador\033[0m: O grande urso desvia de seu ataque, porem ao desviar bate a cabeça em uma árvore, e fica inconsiente por um tempo...')
+            print(letra, end='', flush=True)
+            time.sleep(0.05)
             break
     else:
         print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
         continue
+
+texto = ('\033[93mNarrador\033[0m: Neste mesmo instante uma bela e luminosa fada aparece acima de seus olhos e fala com você!')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+clear_screen()
+
+texto = ('\033[95mFada\033[0m: Por sorte nesta grande batalha os deuses tiveram piedade de você guerreiro, pois vi suas ações e não esta nada bom para enfrentar as criaturas maléficas desta terra, não se acostume com milagres, pois este lugar é traiçoeiro!')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+texto = ('\n\033[93mNarrador\033[0m: Ao adentrar a floresta você vê um labirinto de árvores, você mal entrou e ja se sente perdido tendo apenas as marcas de garra nas árvores, o som ominoso que você ouve ja é o suficiente para sentir o mau agouro que lhe espera porem, você deve prosseguir, afinal, não é como se lhe sobrasse muita escolha...')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+clear_screen()
+
+texto = ('\033[93mNarrador\033[0m: Você segue as marcas de forma quase linear, conforme sua velocidade aumenta, seu coração acompanha seus pés com o peito acelerado, você tem medo do que pode encontrar, muito você ja corre, seus pensamentos embaralham e sua cabeça o tontea de confusão nao sabe o que vai achar, você nao sabe o que deve pensar, quem é você e por que estava na floresta, por que estava desacordado?')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+texto = ('\n\033[93mNarrador\033[0m: voçê sente medo, seu estomago revira ao sentir o cheiro podre de carne, depois de andar em direção ao cheiro, você vê corpos dilacerados, armaduras que outrorá foram brilhantes e reluzentes, agora foscas e ensanguentadas, o sangue está seco, os corpos ja iniciaram a decomposição, por isso o cheiro, você tampa sua boca e nariz, o local está insuportavel...')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+clear_screen()
+
+print('''
+      \033[91m
+ _|     ███████╗ █████╗ ███████╗███████╗    ██████╗     _|
+ _|     ██╔════╝██╔══██╗██╔════╝██╔════╝    ╚════██╗    _|
+ _|     █████╗  ███████║███████╗█████╗       █████╔╝    _|
+ _|     ██╔══╝  ██╔══██║╚════██║██╔══╝      ██╔═══╝     _|
+ _|     ██║     ██║  ██║███████║███████╗    ███████╗    _|
+ _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝    _|
+\033[91m\n''')
+input("\n\033[90mPressione Enter para começar a primeira fase...\033[0m")
+clear_screen() 
+
+texto = ('\033[93mNarrador\033[0m: Uma coisa lhe chama atenção, um envelope de carta perto de um dos corpos, você pega? ')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+opcao_carta = input().upper()
+while True:
+    if opcao_carta == "NAO":
+            time.sleep(pause)
+            texto = ("\033[93mNarrador\033[0m: você não pega a carta...")
+            for letra in texto:
+                print(letra, end='', flush=True)
+            time.sleep(0.05)
+            break
+    elif opcao_carta == "SIM":
+            time.sleep(pause)
+
+            texto = ("\033[93mNarrador\033[0m: você se agacha perto de um dos corpos e pega o envelope, ele esta vazio, porém não é um envelope comum, a marca de cera, você a reconhece, é da realeza Drusiana!")
+            for letra in texto:
+                print(letra, end='', flush=True)
+            time.sleep(0.05)
+            break
+    else:
+            time.sleep(pause)
+            print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
+            continue
+
+texto = ('\n\033[93mNarrador\033[0m: após isso, voçê ve repara em algo muito incomum, em uma das carcaças, você ve aquilo que se asemelha a uma seta você investiga? ')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+opcao_seta = input().upper()
+while True:
+    if opcao_seta == "NAO":
+            time.sleep(pause)
+            texto = ("\033[93mNarrador\033[0m: Você não pega a seta, porem consegue ouvir o som de uma das arvores gemendo e rangendo, uma árvore viva se revela, você nao tem escolha se não lutar...")
+            for letra in texto:
+                print(letra, end='', flush=True)
+            time.sleep(0.05)
+            break
+    elif opcao_seta == "SIM":
+            time.sleep(pause)
+            texto = ("\n\033[93mNarrador\033[0m: Novamente, você se abaixa e pega até então a desconhecida seta, parece uma flecha comum, mas você não à reconhece de lugar algum. você a guarda, logo após consegue ouvir o som de uma das árvores gemendo e rangendo, uma árvore viva se revela, você não tem escolha se não lutar...")
+            for letra in texto:
+                print(letra, end='', flush=True)
+            time.sleep(0.05)
+            break
+    else:
+            time.sleep(pause)
+            print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
+            continue
+        
+texto = ('você chega mais perto da árvore e a cada passo ela fica maior, mas você à enfrenta sem exitar!')
+for letra in texto:
+            print(letra, end='', flush=True)
+time.sleep(0.05)
+    
+#personagem1 = {"você": "guerreiro", "vida": 100, "ataque": 20}
+#personagem2 = {"árvore viva": "Monstro", "vida": 80, "ataque": 15}
+
+#def atacar(atacante, alvo):
+#    dano = random.randint(atacante["ataque"] - 5, atacante["ataque"] + 5)
+#    alvo["vida"] -= dano
+ #   print(f"{atacante['você']} ataca {alvo['árvore viva']} e causa {dano} de dano!")
+ #   time.sleep(0.015) 
+
+#while personagem1["vida"] > 0 and personagem2["vida"] > 0:
+#    atacar(personagem1, personagem2)
+#    if personagem2["vida"] <= 0:
+ #       break  
+#    atacar(personagem2, personagem1)
+#    if personagem1["vida"] <= 0:
+ #       break 
+#if personagem1["vida"] <= 0:
+#    print(f"{personagem2['árvore viva']} venceu a batalha!")
+#elif personagem2["vida"] <= 0:
+#    print(f"{personagem1['você']} venceu a batalha!")
+#else:
+#    print("A batalha, por mais árdua e cansativa que foi, terminou em empate. Ambos, fracos, tomam seu rumo pela floresta...")
