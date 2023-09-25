@@ -2,6 +2,7 @@ import time
 import random
 import os
 import curses
+import pygame
 
 pause = 1.0
 pause2 = 2.0
@@ -12,6 +13,9 @@ acessorios = None
 def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
+pygame.init()
+pygame.mixer.music.load("drusila_audiogame.mp3")
+pygame.mixer.music.play()
 
 def fade_in_text(texto, velocidade):
     for i in range(len(texto)):
@@ -33,6 +37,8 @@ def clear_screen():
     else:
         os.system('clear')
 
+
+
 texto = '''\033[91m
 
  _|       ██████╗ ██████╗ ██╗   ██╗███████╗██╗██╗      █████╗        _|
@@ -47,12 +53,13 @@ texto = '''\033[91m
                     e exploram suas capacidades!\n'''
 
 velocidade = 0.010
-
 fade_in_text(texto, velocidade)
 time.sleep(1)
-
 input("\n\033[90mPressione Enter para começar o jogo...\033[0m")
+pygame.mixer.music.stop()
+pygame.quit()
 clear_screen()
+
 
 time.sleep(pause2)
 texto = ('\033[95mGarota\033[0m: Oh! Finalmente, você despertou está machucado e essas vestimentas, Ough! fedem, e muito!')
