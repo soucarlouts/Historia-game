@@ -4,11 +4,27 @@ import os
 import curses
 import pygame
 
+
+
+class Arma:
+    def __init__(self, dano, ataque):
+        self.dano = dano
+        self.ataque = ataque
+        
+    def get_dano(self):
+        return self.dano
+    
+    def get_ataque(self):
+        return self.ataque
+        
+EspadaTal = Arma("Ataque Corte!!!" , 10)
+print(EspadaTal.get_dano(), EspadaTal.get_ataque())
 pause = 1.0
 pause2 = 2.0
 pause3 = 3.0
 armas = None
 acessorios = None
+
 
 def rolar_dado():
     return random.randint(1, 6)
@@ -349,7 +365,7 @@ print('''
  _|     ██║     ██║  ██║███████║███████╗    ███████╗    _|
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝    _|
 \033[91m\n''')
-input("\n\033[90mPressione Enter para começar a primeira fase...\033[0m")
+input("\n\033[90mPressione Enter para começar a Segunda fase...\033[0m")
 clear_screen() 
 
 texto = ('\033[93mNarrador\033[0m: Uma coisa lhe chama atenção, um envelope de carta perto de um dos corpos, você pega? ')
@@ -407,26 +423,3 @@ texto = ('você chega mais perto da árvore e a cada passo ela fica maior, mas v
 for letra in texto:
             print(letra, end='', flush=True)
 time.sleep(0.05)
-    
-#personagem1 = {"você": "guerreiro", "vida": 100, "ataque": 20}
-#personagem2 = {"árvore viva": "Monstro", "vida": 80, "ataque": 15}
-
-#def atacar(atacante, alvo):
-#    dano = random.randint(atacante["ataque"] - 5, atacante["ataque"] + 5)
-#    alvo["vida"] -= dano
- #   print(f"{atacante['você']} ataca {alvo['árvore viva']} e causa {dano} de dano!")
- #   time.sleep(0.015) 
-
-#while personagem1["vida"] > 0 and personagem2["vida"] > 0:
-#    atacar(personagem1, personagem2)
-#    if personagem2["vida"] <= 0:
- #       break  
-#    atacar(personagem2, personagem1)
-#    if personagem1["vida"] <= 0:
- #       break 
-#if personagem1["vida"] <= 0:
-#    print(f"{personagem2['árvore viva']} venceu a batalha!")
-#elif personagem2["vida"] <= 0:
-#    print(f"{personagem1['você']} venceu a batalha!")
-#else:
-#    print("A batalha, por mais árdua e cansativa que foi, terminou em empate. Ambos, fracos, tomam seu rumo pela floresta...")
