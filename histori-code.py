@@ -54,7 +54,7 @@ def clear_screen():
 
 
 
-texto = '''\033[92m
+texto = '''\033[91m
 
  _|       ██████╗ ██████╗ ██╗   ██╗███████╗██╗██╗      █████╗        _|
  _|       ██╔══██╗██╔══██╗██║   ██║██╔════╝██║██║     ██╔══██╗       _|
@@ -75,8 +75,51 @@ pygame.mixer.music.stop()
 pygame.quit()
 clear_screen()
 
+texto = ('\033[93mAncião\033[0m: Oh Olá, como estás nobre viajante? diga me, o que tu procuras? aventura? diversão? batalhas, ouro, gloria?  HAHAHAHAHA!!!\n\033[93mAncião\033[0m: Veremos como você se sairá nessas terras traiçoerais, luta, conquiste e saqueie, mostre a este lugar maldito e agourento do que você é feito,\n\033[93mAncião\033[0m: Mostre o que corre dentro de tua pele, mostre-nos que cor é seu sangue se tu tiveres coragem para tentar, se tiver o peito e alma de um guerreiro de verdade\n\033[93mAncião\033[0m: não tera duvidas ao mostrar ao continente de drusila quem é você e o que você é HAHAHAHAHA!!!')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.06)
+time.sleep(pause)
 
+clear_screen()
+
+print('''\033[92m
+ █████╗     ███████╗██╗      ██████╗ ██████╗ ███████╗███████╗████████╗ █████╗ 
+██╔══██╗    ██╔════╝██║     ██╔═══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗
+███████║    █████╗  ██║     ██║   ██║██████╔╝█████╗  ███████╗   ██║   ███████║
+██╔══██║    ██╔══╝  ██║     ██║   ██║██╔══██╗██╔══╝  ╚════██║   ██║   ██╔══██║
+██║  ██║    ██║     ███████╗╚██████╔╝██║  ██║███████╗███████║   ██║   ██║  ██║
+╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
+ \033[92m
+      ''')
 time.sleep(pause2)
+clear_screen()
+
+texto = ('\033[93mNarrador\033[0m: A grande floresta de drusila, que contem as grandes árvores frutiferas, belas e perfumadas, é um labirinto gigante, a unica forma de realmente conhecer esta floresta,\n\033[93mNarrador\033[0m: é morando ou caçando aqui e isso é mostrado pelos ēlifi nome dos nativos élficos da floresta, aqui caçam, pescam, e plantam suas árvores, são seres esguios e dificeis de localizar, mas ja foram avistados colhendo suas frutas')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.06) 
+time.sleep(pause)
+
+texto = ('\n\033[93mNarrador\033[0m: A floresta tem um ecossistema proprio, místico e abriga varias raças diferentes, Os ēlifis aqui nascidos,\neram criados como gados para o abate, e essa pratica foi mantida por mais de 3 séculos, os ēlifi ao decorrer desses anos criaram um ódio pelos humanos, que no momento, não pode ser simplesmente esquecido...')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.06) 
+time.sleep(pause)
+
+clear_screen()
+
+print('''\033[91m
+      ██████╗     ██╗███╗   ██╗██╗ ██████╗██╗ ██████╗ 
+     ██╔═══██╗    ██║████╗  ██║██║██╔════╝██║██╔═══██╗
+     ██║   ██║    ██║██╔██╗ ██║██║██║     ██║██║   ██║
+     ██║   ██║    ██║██║╚██╗██║██║██║     ██║██║   ██║
+     ╚██████╔╝    ██║██║ ╚████║██║╚██████╗██║╚██████╔╝
+      ╚═════╝     ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝ ╚═════╝ 
+\033[91m''')
+time.sleep(pause2)
+clear_screen()
+
 texto = ('\033[95mGarota\033[0m: Oh! Finalmente, você despertou está machucado e essas vestimentas, Ough! fedem, e muito!')
 for letra in texto:
     print(letra,end='', flush=True)
