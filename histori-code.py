@@ -18,7 +18,6 @@ class Arma:
         return self.ataque
         
 EspadaTal = Arma("Ataque Corte!!!" , 10)
-print(EspadaTal.get_dano(), EspadaTal.get_ataque())
 pause = 1.0
 pause2 = 2.0
 pause3 = 3.0
@@ -282,7 +281,13 @@ for letra in texto:
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = (f'\n\033[93mNarrador\033[0m: enquanto você olha as árvores, ouve pegadas se aproximando, é algo grande! Você saca sua/seu {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo! e um enorme urso ensanguentado pula de fora da floresta, em sua pelagem densa à marcas de espadas apenas olhar para tal criatura o enche de medo...')
+texto = (f'\n\033[93mNarrador\033[0m: enquanto você olha as árvores, ouve pegadas se aproximando, é algo grande! Você saca sua/seu {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!') 
+pygame.init()
+pygame.mixer.music.load("Bear growl.ogg")
+pygame.mixer.music.play()
+texto = (f'\n\033[93mNarrador\033[0m: e um enorme urso ensanguentado pula de fora da floresta, em sua pelagem densa à marcas de espadas apenas olhar para tal criatura o enche de medo...')
+pygame.mixer.music.stop()
+pygame.quit()
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
