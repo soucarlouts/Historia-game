@@ -1,22 +1,19 @@
 import time
 import random
 import os
-import curses
 import pygame
-
-
 
 class Arma:
     def __init__(self, dano, ataque):
         self.dano = dano
         self.ataque = ataque
-        
+
     def get_dano(self):
         return self.dano
-    
+
     def get_ataque(self):
         return self.ataque
-        
+
 EspadaTal = Arma("Ataque Corte!!!" , 10)
 pause = 1.0
 pause2 = 2.0
@@ -29,7 +26,6 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
-pygame.mixer.music.load("game/somdefase.mp3")
 pygame.mixer.music.load("drusila_audiogame.mp3")
 pygame.mixer.music.play()
 
@@ -70,8 +66,12 @@ texto = '''\033[91m
 
 velocidade = 0.010
 fade_in_text(texto, velocidade)
-time.sleep(1)
-input("\n\033[90mPressione Enter para começar o jogo...\033[0m")
+
+texto = "\n\033[90mPressione Enter para começar o jogo...\033[0m"
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+input()
 pygame.mixer.music.stop()
 pygame.quit()
 clear_screen()
@@ -132,15 +132,27 @@ for letra in texto:
     time.sleep(0.05) 
 time.sleep(pause)
 
-nome = input ('\n\033[95mGarota\033[0m: Diga-me qual é o teu nome? ')
+texto = ('\n\033[95mGarota\033[0m: Diga-me qual é o teu nome? ')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+nome = input()
 time.sleep(pause)
 
-print ('\033[95mGarota\033[0m: E o que tu és,',nome,'?\n')
+texto = ('\033[95mGarota\033[0m: E o que tu és,',nome,'?\n')
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+input()
 
 opcoes_classes = ['Paladino', 'Feiticeiro', 'Arqueiro']
 
 while True:
-    texto = classes = input('Escolha uma classe \033[92m(Paladino, Feiticeiro, Arqueiro): \033[0m')
+    texto = ('Escolha uma classe \033[92m(Paladino, Feiticeiro, Arqueiro): \033[0m')
+    for letra in texto:
+        print(letra, end='', flush=True)
+        time.sleep(0.05)
+    classes = input()
 
     classes = classes.capitalize()
 
@@ -262,7 +274,11 @@ print('''
  _|     ██║     ██║  ██║███████║███████╗     ██║     _|
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝     ╚═╝     _| 
 \033[91m\n''')
-input("\n\033[90mPressione Enter para começar a primeira fase...\033[0m")
+texto = ("\n\033[90mPressione Enter para começar a primeira fase...\033[0m")
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+input()
 clear_screen()          
       
 
@@ -420,7 +436,12 @@ print('''
  _|     ██║     ██║  ██║███████║███████╗    ███████╗    _|
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝    _|
 \033[91m\n''')
-input("\n\033[90mPressione Enter para começar a Segunda fase...\033[0m")
+texto = ("\n\033[90mPressione Enter para começar a Segunda fase...\033[0m")
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.05)
+
+input()
 clear_screen() 
 
 texto = ('\033[93mNarrador\033[0m: Uma coisa lhe chama atenção, um envelope de carta perto de um dos corpos, você pega? ')
