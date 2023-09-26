@@ -76,7 +76,7 @@ pygame.mixer.music.stop()
 pygame.quit()
 clear_screen()
 
-texto = ('\033[93mAncião\033[0m: Oh Olá, como estás nobre viajante? diga me, o que tu procuras? aventura? diversão? batalhas, ouro, gloria?  HAHAHAHAHA!!!\n\033[93mAncião\033[0m: Veremos como você se sairá nessas terras traiçoerais, luta, conquiste e saqueie, mostre a este lugar maldito e agourento do que você é feito,\n\033[93mAncião\033[0m: Mostre o que corre dentro de tua pele, mostre-nos que cor é seu sangue se tu tiveres coragem para tentar, se tiver o peito e alma de um guerreiro de verdade\n\033[93mAncião\033[0m: não tera duvidas ao mostrar ao continente de drusila quem é você e o que você é HAHAHAHAHA!!!')
+texto = ('\033[93mAncião\033[0m: Oh Olá, como estás nobre viajante? diga me, o que tu procuras? aventura? diversão? batalhas, ouro, gloria?  HAHAHAHAHA!!!\n\033[93mAncião\033[0m: Veremos como você se sairá nessas terras traiçoerais, luta, conquiste e saqueie, mostre a este lugar maldito e agourento do que você é feito,\n\033[93mAncião\033[0m: Mostre o que corre dentro de tua pele, mostre-nos que cor é seu sangue se tu tiveres coragem para tentar, se tiver o peito e alma de um guerreiro de verdade não tera duvidas ao mostrar ao continente de drusila quem é você e o que você é HAHAHAHAHA!!!')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.06)
@@ -84,16 +84,18 @@ time.sleep(pause)
 
 clear_screen()
 
-print('''\033[92m
+print('''\033[92m 
  █████╗     ███████╗██╗      ██████╗ ██████╗ ███████╗███████╗████████╗ █████╗ 
 ██╔══██╗    ██╔════╝██║     ██╔═══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗
 ███████║    █████╗  ██║     ██║   ██║██████╔╝█████╗  ███████╗   ██║   ███████║
 ██╔══██║    ██╔══╝  ██║     ██║   ██║██╔══██╗██╔══╝  ╚════██║   ██║   ██╔══██║
 ██║  ██║    ██║     ███████╗╚██████╔╝██║  ██║███████╗███████║   ██║   ██║  ██║
 ╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
- \033[92m
-      ''')
-time.sleep(pause2)
+ \033[92m''')
+pygame.init()
+pygame.mixer.music.load("game/somdefase.mp3")
+pygame.mixer.music.play()
+input('\n\033[90mpróximo...\033[0m')
 clear_screen()
 
 texto = ('\033[93mNarrador\033[0m: A grande floresta de drusila, que contem as grandes árvores frutiferas, belas e perfumadas, é um labirinto gigante, a unica forma de realmente conhecer esta floresta,\n\033[93mNarrador\033[0m: é morando ou caçando aqui e isso é mostrado pelos ēlifi nome dos nativos élficos da floresta, aqui caçam, pescam, e plantam suas árvores, são seres esguios e dificeis de localizar, mas ja foram avistados colhendo suas frutas')
@@ -118,7 +120,10 @@ print('''\033[91m
      ╚██████╔╝    ██║██║ ╚████║██║╚██████╗██║╚██████╔╝
       ╚═════╝     ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝ ╚═════╝ 
 \033[91m''')
-time.sleep(pause2)
+pygame.init()
+pygame.mixer.music.load("game/somdefase.mp3")
+pygame.mixer.music.play()
+input('\n\033[90mpróximo...\033[0m')
 clear_screen()
 
 texto = ('\033[95mGarota\033[0m: Oh! Finalmente, você despertou está machucado e essas vestimentas, Ough! fedem, e muito!')
@@ -199,6 +204,7 @@ texto = ('\n\033[94mVocê\033[0m: O-Obrigado...')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
+    time.sleep(pause)
 
 clear_screen()
 
