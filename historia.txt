@@ -4,14 +4,6 @@ G- Diga-me qual és teu nome?
 
 {inserir nome}
 
-G- E, o que tu és?
-
-{inserir opção de classes}
-
-classes = [Paladino - Feiticeiro - Arqueiro]
-
-G- Ah, mas é claro, com essas vestimentas era óbvio!
-
 G- o que fazes aqui "nome"?
 
 N- eu... eu não me lembro.
@@ -31,13 +23,12 @@ N- O-Obrigado.
 Narrador- A mulher estrangeira lava suas vestimentas enquanto você se limpava, quando saiu de seu banho
 achou suas vestimentas limpas, porem no estado que estavam, eram apenas trapos, e somente por pouco
 lembrava sua forma antiga.
-Mas voce não se lembra do que aconteceu, com apenas seu/a [cajado, espada, arco] e [amuleto, armadura, aljava] voce decide agradecer a mulher estrangeira e partir para tentar descobrir o que aconteceu, mas antes voce à pede para lhe mostrar
-onde o achou.
+Mas voce não se lembra do que aconteceu, mas decide agradecer a mulher estrangeira e partir para tentar descobrir, 
+mas antes voce à pede para lhe mostrar onde o achou...
 
-G- Bom, só posso lhe trazer até aqui, boa sorte guerreiro, que a luz de !THALMOR! brilhe sobre ti.
+G- Bom, só posso lhe trazer até aqui, boa sorte (nome), que a luz de !THALMOR! brilhe sobre ti.
 
-Narrador- E assim comça sua jornada, com apenas seu/sua [Espada - Cajado - Arco] em mãos e trapos em seu corpo
-você decide investigar.
+Narrador- E assim comça sua jornada, com uma vasta floresta em sua frente e trapos em seu corpo...
 
 Narrador- você esta na entrada de uma floresta cercada por arvores frutiferas, suas frutas
 sao de cores variadas, e exalam o melhor perfume que seu nariz ja sentiu.
