@@ -62,10 +62,10 @@ texto = '''\033[92m
  _|_/     ██║  ██║██╔══██╗██║   ██║╚════██║██║██║     ██╔══██║     _/_|
  _|_/_/   ██████╔╝██║  ██║╚██████╔╝███████║██║███████╗██║  ██║   _/_/_|
  _|_/_/_/ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝╚══════╝╚═╝  ╚═╝ _/_/_/_|
-                          (rpg text game)\033[91m\n
+                          (rpg text game)\n
                    Um mundo mágico de imaginação,
                 com textos que prendem seus jogadores
-                    e exploram suas capacidades!\n'''
+                    e exploram suas capacidades!\033[91m\n'''
 
 velocidade = 0.010
 fade_in_text(texto, velocidade)
