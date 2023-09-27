@@ -26,6 +26,7 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
+pygame.mixer.music.load("game/somdefase.mp3")
 pygame.mixer.music.load("drusila_audiogame.mp3")
 pygame.mixer.music.play()
 
