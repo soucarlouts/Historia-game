@@ -98,7 +98,7 @@ print('''\033[92m
 ╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
  \033[92m''')
 pygame.init()
-pygame.mixer.music.load("somdefase.mp3")
+pygame.mixer.music.load("C:\Historia-game\Som\somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
