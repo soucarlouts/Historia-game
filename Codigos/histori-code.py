@@ -26,7 +26,12 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
+
 pygame.mixer.music.load("C:\Historia-game\Som\drusila_audiogame.mp3")
+
+pygame.mixer.music.load("somdefase.mp3")
+pygame.mixer.music.load("drusila_audiogame.mp3")
+
 pygame.mixer.music.play()
 
 def fade_in_text(texto, velocidade):
@@ -93,7 +98,7 @@ print('''\033[92m
 ╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
  \033[92m''')
 pygame.init()
-pygame.mixer.music.load("game/somdefase.mp3")
+pygame.mixer.music.load("somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
@@ -121,7 +126,7 @@ print('''\033[91m
       ╚═════╝     ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝ ╚═════╝ 
 \033[91m''')
 pygame.init()
-pygame.mixer.music.load("game/somdefase.mp3")
+pygame.mixer.music.load("somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
