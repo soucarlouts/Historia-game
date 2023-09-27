@@ -26,7 +26,7 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
-pygame.mixer.music.load("drusila_audiogame.mp3")
+pygame.mixer.music.load("C:\Historia-game\Som\drusila_audiogame.mp3")
 pygame.mixer.music.play()
 
 def fade_in_text(texto, velocidade):
