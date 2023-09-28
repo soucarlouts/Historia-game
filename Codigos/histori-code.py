@@ -18,6 +18,7 @@ EspadaTal = Arma("Ataque Corte!!!" , 10)
 pause = 1.0
 pause2 = 2.0
 pause3 = 3.0
+pause4 = 10.0
 armas = None
 acessorios = None
 
@@ -26,6 +27,8 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
+pygame.mixer.music.load("som_digitado.mp3")
+pygame.mixer.music.load("som_unis.mp3")
 pygame.mixer.music.load("somdefase.mp3")
 pygame.mixer.music.load("drusila_audiogame.mp3")
 pygame.mixer.music.play()
@@ -50,8 +53,33 @@ def clear_screen():
     else:
         os.system('clear')
 
+print('''            \033[94m                                                           
+                      @@@@@@@@@@                @@@@@@@@@@                ##        @@@@@@@@@@                          
+                      @@@@@@@@@@            @@@@@@@@@@@@@@@@            @@@@    @@@@@@@@@@@@@@@@@@                      
+                      @@@@@@@@@@          @@@@@@@@@@@@@@@@@@@@      @@@@@@@@  @@@@@@@@@@@@@@@@                          
+                      @@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@  @@@@@@@@                                  
+                      @@@@@@@@@@        @@@@@@@@        @@@@@@@@  @@@@@@@@@@  @@@@@@@@                                  
+                      @@@@@@@@@@        @@@@            @@@@@@@@  @@@@@@@@@@  @@@@@@@@@@@@@@                            
+                      @@@@@@@@@@        @@              @@@@@@@@  @@@@@@@@@@    @@@@@@@@@@@@@@@@                        
+                      @@@@@@@@@@            @@@@        @@@@@@@@  @@@@@@@@@@      @@@@@@@@@@@@@@@@                      
+                        @@@@@@@@        @@@@@@@@        @@@@@@@@  @@@@@@@@@@              @@@@@@@@##                    
+                        @@@@@@@@@@    @@@@@@@@@@        @@@@@@@@  @@@@@@@@@@                @@@@@@@@                    
+                        @@@@@@@@@@@@@@@@@@@@@@          @@@@@@@@  @@@@@@@@@@    @@@@@@@@@@@@@@@@@@                      
+                          @@@@@@@@@@@@@@@@@@            @@@@@@@@  @@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@                      
+                              @@@@@@@@@@##              @@@@@@@@  @@@@@@@@@@    ##@@@@@@@@@@@@@@ \033[94m                       
+                                                                
+''')
+pygame.init()
+pygame.mixer.music.load("som_unis.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play()
+time.sleep(pause3)
 
+clear_screen()
 
+pygame.init()
+pygame.mixer.music.load("drusila_audiogame.mp3")
+pygame.mixer.music.play()
 texto = '''\033[91m
 
  _|       ██████╗ ██████╗ ██╗   ██╗███████╗██╗██╗      █████╗        _|
@@ -61,10 +89,10 @@ texto = '''\033[91m
  _|_/_/   ██████╔╝██║  ██║╚██████╔╝███████║██║███████╗██║  ██║   _/_/_|
  _|_/_/_/ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝╚══════╝╚═╝  ╚═╝ _/_/_/_|
                           (rpg text game)\n
-                   Um mundo mágico de imaginação,
+                   Um mundo mágico de imaginação, 
                 com textos que prendem seus jogadores
                     e exploram suas capacidades!\033[91m\n'''
-
+                
 velocidade = 0.010
 fade_in_text(texto, velocidade)
 texto = "\n\033[90mPressione Enter para começar o jogo...\033[0m"
@@ -90,7 +118,7 @@ print('''\033[91m
 ██╔══██╗    ██╔════╝██║     ██╔═══██╗██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗
 ███████║    █████╗  ██║     ██║   ██║██████╔╝█████╗  ███████╗   ██║   ███████║
 ██╔══██║    ██╔══╝  ██║     ██║   ██║██╔══██╗██╔══╝  ╚════██║   ██║   ██╔══██║
-██║  ██║    ██║     ███████╗╚██████╔╝██║  ██║███████╗███████║   ██║   ██║  ██║
+██║  ██║    ██║     ███████╗╚██████╔╝██║  ██║███████╗███████║   ██║   ██║  ██║    
 ╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
  \033[91m''')
 pygame.init()
