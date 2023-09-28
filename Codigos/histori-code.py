@@ -29,8 +29,8 @@ pygame.init()
 
 pygame.mixer.music.load("C:\Historia-game\Som\drusila_audiogame.mp3")
 
-pygame.mixer.music.load("somdefase.mp3")
-pygame.mixer.music.load("drusila_audiogame.mp3")
+pygame.mixer.music.load("C:\Historia-game\Som\som-teclas.mp3")
+pygame.mixer.music.load("C:\Historia-game\Som\drusila_audiogame.mp3")
 
 pygame.mixer.music.play()
 
