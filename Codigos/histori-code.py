@@ -27,9 +27,9 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
-pygame.mixer.music.load("../Som/som_digitado.mp3")
-pygame.mixer.music.load("../Som/somdefase.mp3")
-pygame.mixer.music.load("../Som/drusila_audiogame.mp3")
+pygame.mixer.music.load("Som/som_digitado.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
+pygame.mixer.music.load("Som/drusila_audiogame.mp3")
 pygame.mixer.music.play()
 
 def fade_in_text(texto, velocidade):
@@ -75,7 +75,7 @@ time.sleep(pause3)
 
 clear_screen()
 
-pygame.mixer.music.load("../Som/drusila_audiogame.mp3")
+pygame.mixer.music.load("Som/drusila_audiogame.mp3")
 pygame.mixer.music.play()
 texto = '''\033[91m
 
@@ -120,7 +120,7 @@ print('''\033[91m
 ╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
  \033[91m''')
 pygame.init()
-pygame.mixer.music.load("../Som/somdefase.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
@@ -148,7 +148,7 @@ print('''\033[91m
       ╚═════╝     ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝ ╚═════╝ 
 \033[91m''')
 pygame.init()
-pygame.mixer.music.load("../Som/somdefase.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
@@ -312,7 +312,7 @@ print('''
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝     ╚═╝     _| 
 \033[91m\n''')
 pygame.init()
-pygame.mixer.music.load("../Som/somdefase.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione Enter para começar a primeira fase...\033[0m")
 for letra in texto:
@@ -369,7 +369,7 @@ time.sleep(pause)
 
 texto = (f'\n\033[93mNarrador\033[0m: Enquanto você olha as árvores, ouve pegadas se aproximando, é algo grande! Você saca sua/seu {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!') 
 pygame.init()
-pygame.mixer.music.load("../Som/Bear growl.ogg")
+pygame.mixer.music.load("Som/Bear growl.ogg")
 pygame.mixer.music.play()
 texto = (f'\n\033[93mNarrador\033[0m: e um enorme urso ensanguentado pula de fora da floresta, em sua pelagem densa à marcas de espadas apenas olhar para tal criatura o enche de medo...')
 pygame.mixer.music.stop()
@@ -462,7 +462,7 @@ print('''
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝    _|
 \033[91m\n''')
 pygame.init()
-pygame.mixer.music.load("../Som/somdefase.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione Enter para começar a Segunda fase...\033[0m")
 for letra in texto:
