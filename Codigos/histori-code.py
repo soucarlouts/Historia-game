@@ -28,6 +28,7 @@ def rolar_dado():
 resultado_dados = rolar_dado()
 pygame.init()
 
+
 pygame.mixer.music.load("C:\Historia-game\Som\drusila_audiogame.mp3")
 
 pygame.mixer.music.load("C:\Historia-game\Som\som-teclas.mp3")
@@ -37,6 +38,11 @@ pygame.mixer.music.load("C:\Historia-game\Som\drusila_audiogame.mp3")
 pygame.mixer.music.load("../Som/som_digitado.mp3")
 pygame.mixer.music.load("../Som/somdefase.mp3")
 pygame.mixer.music.load("../Som/drusila_audiogame.mp3")
+
+
+pygame.mixer.music.load("Som/som_digitado.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
+pygame.mixer.music.load("Som/drusila_audiogame.mp3")
 
 pygame.mixer.music.play()
 
@@ -83,7 +89,7 @@ time.sleep(pause3)
 
 clear_screen()
 
-pygame.mixer.music.load("../Som/drusila_audiogame.mp3")
+pygame.mixer.music.load("Som/drusila_audiogame.mp3")
 pygame.mixer.music.play()
 texto = '''\033[91m
 
@@ -128,7 +134,7 @@ print('''\033[91m
 ╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
  \033[91m''')
 pygame.init()
-pygame.mixer.music.load("../Som/somdefase.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
@@ -156,7 +162,7 @@ print('''\033[91m
       ╚═════╝     ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝ ╚═════╝ 
 \033[91m''')
 pygame.init()
-pygame.mixer.music.load("../Som/somdefase.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
@@ -266,29 +272,29 @@ clear_screen()
 def obter_armas_e_acessorios(classe):
     match classe:
         case "Paladino":
-            return "Espada", "Armadura"
+            return "Espada", "Armadura", "sua"
         case "Feiticeiro":
-            return "Cajado", "Amuleto"
+            return "Cajado", "Amuleto", "seu"
         case "Arqueiro":
-            return "Arco", "Aljava"
+            return "Arco", "Aljava", "sua"
         case _:
             return "Classe não reconhecida", "Acessórios não disponíveis"
 
 classe_escolhida = classes
-armas, acessorios = obter_armas_e_acessorios(classe_escolhida)
+armas, acessorios, pronome = obter_armas_e_acessorios(classe_escolhida)
 
-texto = (f'\n\033[93mNarrador\033[0m: Você pega seu/sua {armas} e limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
+texto = (f'\n\033[93mNarrador\033[0m: Você pega {pronome} {armas} e limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 
-texto = (f'\033[93mNarrador\033[0m: Você ajusta seu/sua {acessorios} e reflete como tudo isso aconteceu, mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
+texto = (f'\033[93mNarrador\033[0m: Você ajusta {pronome} {acessorios} e reflete como tudo isso aconteceu, mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava, quando saiu de seu banho achou suas vestimentas limpas, porem no estado que estavam, eram apenas trapos, e somente por pouco lembrava sua forma antiga. Mas voce não se lembra do que aconteceu, com apenas seu/sua {armas} e {acessorios} voce decide agradecer a mulher estrangeira e partir para tentar descobrir o que aconteceu, mas antes voce à pede para lhe mostrar onde o achou.')
+texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava, quando saiu de seu banho achou suas vestimentas limpas, porem no estado que estavam, eram apenas trapos, e somente por pouco lembrava sua forma antiga. Mas voce não se lembra do que aconteceu, com apenas {pronome} {armas} e {acessorios} voce decide agradecer a mulher estrangeira e partir para tentar descobrir o que aconteceu, mas antes voce à pede para lhe mostrar onde o achou.')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -302,7 +308,7 @@ for letra in texto:
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = (f'\n\033[93mNarrador\033[0m: E assim começa sua jornada, com apenas seu/sua {armas} em mãos e trapos em seu corpo você decide investigar...')
+texto = (f'\n\033[93mNarrador\033[0m: E assim começa sua jornada, com apenas {pronome} {armas} em mãos e trapos em seu corpo você decide investigar...')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -320,7 +326,7 @@ print('''
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝     ╚═╝     _| 
 \033[91m\n''')
 pygame.init()
-pygame.mixer.music.load("../Som/somdefase.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione Enter para começar a primeira fase...\033[0m")
 for letra in texto:
@@ -375,9 +381,9 @@ for letra in texto:
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = (f'\n\033[93mNarrador\033[0m: Enquanto você olha as árvores, ouve pegadas se aproximando, é algo grande! Você saca sua/seu {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!') 
+texto = (f'\n\033[93mNarrador\033[0m: Enquanto você olha as árvores, ouve pegadas se aproximando, é algo grande! Você saca {pronome} {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!')
 pygame.init()
-pygame.mixer.music.load("../Som/Bear growl.ogg")
+pygame.mixer.music.load("Som/Bear growl.ogg")
 pygame.mixer.music.play()
 texto = (f'\n\033[93mNarrador\033[0m: e um enorme urso ensanguentado pula de fora da floresta, em sua pelagem densa à marcas de espadas apenas olhar para tal criatura o enche de medo...')
 pygame.mixer.music.stop()
@@ -470,7 +476,7 @@ print('''
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝    _|
 \033[91m\n''')
 pygame.init()
-pygame.mixer.music.load("../Som/somdefase.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione Enter para começar a Segunda fase...\033[0m")
 for letra in texto:
