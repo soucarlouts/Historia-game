@@ -27,23 +27,9 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
-
-
-pygame.mixer.music.load("C:\Historia-game\Som\drusila_audiogame.mp3")
-
-pygame.mixer.music.load("C:\Historia-game\Som\som-teclas.mp3")
-pygame.mixer.music.load("C:\Historia-game\Som\drusila_audiogame.mp3")
-
-
-pygame.mixer.music.load("../Som/som_digitado.mp3")
-pygame.mixer.music.load("../Som/somdefase.mp3")
-pygame.mixer.music.load("../Som/drusila_audiogame.mp3")
-
-
-pygame.mixer.music.load("Som/som_digitado.mp3")
-pygame.mixer.music.load("Som/somdefase.mp3")
-pygame.mixer.music.load("Som/drusila_audiogame.mp3")
-
+pygame.mixer.music.load("Historia-game/som_unis.mp3")
+pygame.mixer.music.load("Historia-game/somdefase.mp3")
+pygame.mixer.music.load("Historia-game/drusila_audiogame.mp3")
 pygame.mixer.music.play()
 
 def fade_in_text(texto, velocidade):
@@ -66,7 +52,7 @@ def clear_screen():
     else:
         os.system('clear')
 
-print('''            \033[94m                                                           
+print('''           \033[94m                                                           
                       @@@@@@@@@@                @@@@@@@@@@                ##        @@@@@@@@@@                          
                       @@@@@@@@@@            @@@@@@@@@@@@@@@@            @@@@    @@@@@@@@@@@@@@@@@@                      
                       @@@@@@@@@@          @@@@@@@@@@@@@@@@@@@@      @@@@@@@@  @@@@@@@@@@@@@@@@                          
@@ -79,20 +65,22 @@ print('''            \033[94m
                         @@@@@@@@@@    @@@@@@@@@@        @@@@@@@@  @@@@@@@@@@                @@@@@@@@                    
                         @@@@@@@@@@@@@@@@@@@@@@          @@@@@@@@  @@@@@@@@@@    @@@@@@@@@@@@@@@@@@                      
                           @@@@@@@@@@@@@@@@@@            @@@@@@@@  @@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@                      
-                              @@@@@@@@@@##              @@@@@@@@  @@@@@@@@@@    ##@@@@@@@@@@@@@@ \033[94m                       
+                              @@@@@@@@@@##              @@@@@@@@  @@@@@@@@@@    ##@@@@@@@@@@@@@@ 
+                    \033[94m                       
                                                                 
 ''')
-
+pygame.init()
+pygame.mixer.music.load("Historia-game/som_unis.mp3")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play()
-time.sleep(pause3)
+time.sleep(pause2)
 
 clear_screen()
 
-pygame.mixer.music.load("Som/drusila_audiogame.mp3")
+pygame.init()
+pygame.mixer.music.load("Historia-game/drusila_audiogame.mp3")
 pygame.mixer.music.play()
 texto = '''\033[91m
-
  _|       ██████╗ ██████╗ ██╗   ██╗███████╗██╗██╗      █████╗        _|
  _|       ██╔══██╗██╔══██╗██║   ██║██╔════╝██║██║     ██╔══██╗       _|
  _|_/     ██║  ██║██████╔╝██║   ██║███████╗██║██║     ███████║     _/_|   
@@ -134,7 +122,7 @@ print('''\033[91m
 ╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
  \033[91m''')
 pygame.init()
-pygame.mixer.music.load("Som/somdefase.mp3")
+pygame.mixer.music.load("Historia-game/somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
@@ -162,7 +150,7 @@ print('''\033[91m
       ╚═════╝     ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝ ╚═════╝ 
 \033[91m''')
 pygame.init()
-pygame.mixer.music.load("Som/somdefase.mp3")
+pygame.mixer.music.load("Historia-game/somdefase.mp3")
 pygame.mixer.music.play()
 input('\n\033[90mpróximo...\033[0m')
 clear_screen()
@@ -205,7 +193,7 @@ while True:
 
 clear_screen()
 
-texto = ('\n\033[95mGarota\033[0m: Ah, mas é claro, com essas vestimentas era óbvio!')
+texto = ('\033[95mGarota\033[0m: Ah, mas é claro, com essas vestimentas era óbvio!')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -229,7 +217,7 @@ for letra in texto:
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = ('\n\033[94mVocê\033[0m: Não...')
+texto = ('\n\033[94mVocê\033[0m: Só lembro de saber quem sou, mas não de estar aqui, agora...')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -272,29 +260,29 @@ clear_screen()
 def obter_armas_e_acessorios(classe):
     match classe:
         case "Paladino":
-            return "Espada", "Armadura", "sua"
+            return "Espada", "Armadura"
         case "Feiticeiro":
-            return "Cajado", "Amuleto", "seu"
+            return "Cajado", "Amuleto"
         case "Arqueiro":
-            return "Arco", "Aljava", "sua"
+            return "Arco", "Aljava"
         case _:
             return "Classe não reconhecida", "Acessórios não disponíveis"
 
 classe_escolhida = classes
-armas, acessorios, pronome = obter_armas_e_acessorios(classe_escolhida)
+armas, acessorios = obter_armas_e_acessorios(classe_escolhida)
 
-texto = (f'\n\033[93mNarrador\033[0m: Você pega {pronome} {armas} e limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
+texto = (f'\033[93mNarrador\033[0m: Você pega seu/sua {armas} e limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 
-texto = (f'\033[93mNarrador\033[0m: Você ajusta {pronome} {acessorios} e reflete como tudo isso aconteceu, mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
+texto = (f'\033[93mNarrador\033[0m: Você ajusta seu/sua {acessorios} e reflete como tudo isso aconteceu, mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava, quando saiu de seu banho achou suas vestimentas limpas, porem no estado que estavam, eram apenas trapos, e somente por pouco lembrava sua forma antiga. Mas voce não se lembra do que aconteceu, com apenas {pronome} {armas} e {acessorios} voce decide agradecer a mulher estrangeira e partir para tentar descobrir o que aconteceu, mas antes voce à pede para lhe mostrar onde o achou.')
+texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava, quando saiu de seu banho achou suas vestimentas limpas, porem no estado que estavam, eram apenas trapos, e somente por pouco lembrava sua forma antiga. Mas voce não se lembra do que aconteceu, com apenas seu/sua {armas} e {acessorios} voce decide agradecer a mulher estrangeira e partir para tentar descobrir o que aconteceu, mas antes voce à pede para lhe mostrar onde o achou.')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -302,13 +290,13 @@ time.sleep(pause2)
 
 clear_screen()
 
-texto = ('\n\033[95mGarota\033[0m: Bom, depois dessa longa caminhada no bosque só posso lhe trazer até aqui. Boa sorte guerreiro, que a luz de \033[4mThalmor\033[0m brilhe sobre ti!')
+texto = ('\033[95mGarota\033[0m: Bom, depois dessa longa caminhada no bosque só posso lhe trazer até aqui. Boa sorte guerreiro, que a luz de \033[4mThalmor\033[0m brilhe sobre ti!')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = (f'\n\033[93mNarrador\033[0m: E assim começa sua jornada, com apenas {pronome} {armas} em mãos e trapos em seu corpo você decide investigar...')
+texto = (f'\n\033[93mNarrador\033[0m: E assim começa sua jornada, com apenas seu/sua {armas} em mãos e trapos em seu corpo você decide investigar...')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -326,9 +314,9 @@ print('''
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝     ╚═╝     _| 
 \033[91m\n''')
 pygame.init()
-pygame.mixer.music.load("Som/somdefase.mp3")
+pygame.mixer.music.load("Historia-game/somdefase.mp3")
 pygame.mixer.music.play()
-texto = ("\n\033[90mPressione Enter para começar a primeira fase...\033[0m")
+texto = ("\n\033[90mPressione enter para começar a primeira fase...\033[0m")
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.03) 
@@ -354,7 +342,7 @@ while True:
     if opcao_fome == "NAO":
         time.sleep(pause)
 
-        texto = ("\n\033[93mNarrador\033[0m: Você decide seguir em frente...")
+        texto = ("\033[93mNarrador\033[0m: Você decide seguir em frente...")
         for letra in texto:
             print(letra, end='', flush=True)
             time.sleep(0.05)
@@ -362,7 +350,7 @@ while True:
     elif opcao_fome == "SIM":
         time.sleep(pause)
 
-        texto = ("\n\033[93mNarrador\033[0m: você pega uma fruta estranha, aparência de maçã, porém com coloração de madeira. Você a morde, seu suco e sabor o revigoram.")
+        texto = ("\033[93mNarrador\033[0m: você pega uma fruta estranha, aparência de maçã, porém com coloração de madeira. Você a morde, seu suco e sabor o revigoram.")
         for letra in texto:
             print(letra, end='', flush=True)
             time.sleep(0.05)
@@ -375,15 +363,15 @@ time.sleep(pause)
 
 clear_screen()
 
-texto = ('\n\033[93mNarrador\033[0m: Você olha e caminha mais um pouco ao seu redor e vê marcas de batalha nas árvores o que parecem ser garras, com grandes árvores dilaceradas em volta, você investiga!')
+texto = ('\033[93mNarrador\033[0m: Você olha e caminha mais um pouco ao seu redor e vê marcas de batalha nas árvores o que parecem ser garras, com grandes árvores dilaceradas em volta, você investiga!')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = (f'\n\033[93mNarrador\033[0m: Enquanto você olha as árvores, ouve pegadas se aproximando, é algo grande! Você saca {pronome} {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!')
+texto = (f'\n\033[93mNarrador\033[0m: Enquanto você olha as árvores, ouve pegadas se aproximando, é algo grande! Você saca sua/seu {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!') 
 pygame.init()
-pygame.mixer.music.load("Som/Bear growl.ogg")
+pygame.mixer.music.load("Historia-game/som_urso.mp3")
 pygame.mixer.music.play()
 texto = (f'\n\033[93mNarrador\033[0m: e um enorme urso ensanguentado pula de fora da floresta, em sua pelagem densa à marcas de espadas apenas olhar para tal criatura o enche de medo...')
 pygame.mixer.music.stop()
@@ -391,44 +379,110 @@ pygame.quit()
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
+time.sleep(pause)
+clear_screen()
 
-#BATALHA
-texto = "\n\033[93mNarrador\033[0m: Atacar? "
+print('''\033[91m
+██████╗  █████╗ ████████╗ █████╗ ██╗     ██╗  ██╗ █████╗ 
+██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██║     ██║  ██║██╔══██╗
+██████╔╝███████║   ██║   ███████║██║     ███████║███████║
+██╔══██╗██╔══██║   ██║   ██╔══██║██║     ██╔══██║██╔══██║
+██████╔╝██║  ██║   ██║   ██║  ██║███████╗██║  ██║██║  ██║
+╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝\033[91m
+          ''')
+pygame.init()
+pygame.mixer.music.load("Historia-game/somdefase.mp3")
+pygame.mixer.music.play()
+texto = ("\n\033[90mPressione enter para começar a batalha...\033[0m")
 for letra in texto:
-    print(letra, end='', flush=True)
-    time.sleep(0.05)
+    print(letra,end='', flush=True)
+    time.sleep(0.03) 
+input()
+pygame.mixer.music.stop()
+pygame.quit()
 
-while True:
-    opcao_batalha = input().upper()
-    if opcao_batalha == "NAO":
-        time.sleep(pause)
-        texto = ('\n\033[93mNarrador\033[0m: Seu coração se enche de medo, suas mãos trêmulas seguram sua arma com falta de confiança, o urso caminha para atacar, mas acaba se distraindo com um barulho alto na floresta e sai rugindo e correndo...\n')
-        for letra in texto:
-            print(letra, end='', flush=True)
-            time.sleep(0.05)
-        break
-    elif opcao_batalha == "SIM":
-        texto = ("\n\033[93mNarrador\033[0m: Mesmo com medo, você tem fé em si mesmo, agarra a sua arma com o próprio coração e ataca!")
-        for letra in texto:
-            print(letra, end='', flush=True)
-            time.sleep(0.05)
-        time.sleep(pause)
-        
-        if resultado_dados > 1:
-            texto = ('\n\033[93mNarrador\033[0m: Sucesso no ataque, você matou o urso!')
-            for letra in texto:
-                print(letra, end='', flush=True)
-                time.sleep(0.05)
-        break
+clear_screen()   
+
+class Ataque:
+    def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
+        self.tipo = tipo
+        self.dano_fixo = dano_fixo
+        self.multiplicador_min = multiplicador_min
+        self.multiplicador_max = multiplicador_max
+
+    def calcular_dano(self):
+        resultado = rolar_dado()
+        multiplicador = calcular_multiplicador(resultado)
+        dano_total = self.dano_fixo + (self.dano_fixo * multiplicador)
+        return dano_total
+
+def rolar_dado():
+    return random.randint(1, 10)
+
+def calcular_multiplicador(resultado):
+    if resultado < 5:
+        return resultado / 5.0
     else:
-        print('\n\033[93mNarrador\033[0m: O grande urso desvia do seu ataque, porém ao desviar, bate a cabeça em uma árvore e fica inconsciente por um tempo...')
-        for letra in texto:
-            print(letra, end='', flush=True)
-            time.sleep(0.05)
-        break
-else:
-    print("\n\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
+        return (resultado - 5) / 5.0
 
+class Personagem:
+    def __init__(self, nome, pv, pa):
+        self.nome = nome
+        self.pv = pv
+        self.pa = pa
+
+    def atacar(self, alvo, tipo_ataque):
+        ataque_escolhido = ataques_disponiveis[tipo_ataque]
+        dano_total = ataque_escolhido.calcular_dano()
+        print(f"{self.nome} ataca {alvo.nome} com {tipo_ataque}!")
+        alvo.receber_dano(dano_total)
+        
+    def receber_dano(self, dano):
+        self.pv -= dano
+        if self.pv < 0:
+            self.pv = 0
+        print(f"{self.nome} recebe {dano} de dano. PV do {self.nome} restante: {self.pv}")
+
+danos_fixos = {
+    "ataque direto": 10,
+    "ataque rapido": 5,
+    "ataque pesado": 15,
+}
+
+ataques_disponiveis = {}
+for tipo, valor in danos_fixos.items():
+    multiplicador_min = 1.0
+    multiplicador_max = 2.0
+    ataque = Ataque(tipo, valor, multiplicador_min, multiplicador_max)
+    ataques_disponiveis[tipo] = ataque
+
+print("Ataques Disponíveis:")
+for tipo, ataque in ataques_disponiveis.items():
+    print(f"{tipo}: dano fixo {ataque.dano_fixo}")
+
+P1 = Personagem("\033[94mGuerreiro\033[0m", 100, 20)
+P2 = Personagem("\033[91mUrso ensanguentado\033[0m", 80, 15)
+
+while P1.pv > 0 and P2.pv > 0:
+    tipo_ataque_escolhido = input(f"\033[93mNarrador\033[0m: Escolha seu ataque (\033[92mataque direto\033[0m/\033[92mataque rápido\033[0m/\033[92mataque pesado\033[0m) para {P1.nome}: ")
+    
+    if tipo_ataque_escolhido in ataques_disponiveis:
+        P1.atacar(P2, tipo_ataque_escolhido)
+    else:
+        print("\033[93mNarrador\033[0m: Tipo de ataque escolhido não está disponível. Digite novamente. ")
+        continue
+    
+    tipo_ataque_monstro = random.choice(list(ataques_disponiveis.keys()))
+    P2.atacar(P1, tipo_ataque_monstro)
+
+    if P1.pv <= 0:
+        print(f"\n\033[93mNarrador\033[0m: {P1.nome} foi derrotado")
+        break
+    elif P2.pv <= 0:
+        print(f"\n\033[93mNarrador\033[0m: {P2.nome} foi derrotado")
+        break
+
+time.sleep(pause)
 clear_screen()
 
 texto = ('\n\033[93mNarrador\033[0m: Neste mesmo instante uma bela e luminosa fada aparece acima de seus olhos e fala com você!')
@@ -439,7 +493,7 @@ time.sleep(pause)
 
 clear_screen()
 
-texto = ('\n\033[95mFada\033[0m: Por sorte nesta grande batalha os deuses tiveram piedade de você guerreiro, pois vi suas ações e não esta nada bom para enfrentar as criaturas maléficas desta terra, não se acostume com milagres, pois este lugar é traiçoeiro!')
+texto = ('\033[95mFada\033[0m: Por sorte nesta grande batalha os deuses tiveram piedade de você guerreiro, pois vi suas ações e não esta nada bom para enfrentar as criaturas maléficas desta terra, não se acostume com milagres, pois este lugar é traiçoeiro!')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -453,13 +507,13 @@ time.sleep(pause)
 
 clear_screen()
 
-texto = ('\n\033[93mNarrador\033[0m: Você segue as marcas de forma quase linear, conforme sua velocidade aumenta, seu coração acompanha seus pés com o peito acelerado, você tem medo do que pode encontrar, muito você ja corre, seus pensamentos embaralham e sua cabeça o tontea de confusão nao sabe o que vai achar, você nao sabe o que deve pensar, quem é você e por que estava na floresta, por que estava desacordado?')
+texto = ('\033[93mNarrador\033[0m: Você segue as marcas de forma quase linear, conforme sua velocidade aumenta, seu coração acompanha seus pés com o peito acelerado. você tem medo do que pode encontrar, seus pensamentos embaralham e sua cabeça o tontea de confusão, você não sabe o que vai achar, ver e encontrar po este lugar maldito...')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
 time.sleep(pause)
 
-texto = ('\n\033[93mNarrador\033[0m: você sente medo, seu estomago revira ao sentir o cheiro podre de carne, depois de andar em direção ao cheiro, você vê corpos dilacerados, armaduras que outrorá foram brilhantes e reluzentes, agora foscas e ensanguentadas, o sangue está seco, os corpos ja iniciaram a decomposição, por isso o cheiro, você tampa sua boca e nariz, o local está insuportavel...')
+texto = ('\n\033[93mNarrador\033[0m: Você sente medo, ao adentrar a floresta você sente um cheiro podre de carne, depois de andar em direção ao cheiro, você vê corpos dilacerados, armaduras que outrorá foram brilhantes e reluzentes, agora foscas e ensanguentadas, o sangue está seco, os corpos ja iniciaram a decomposição, por isso o cheiro, você tampa sua boca e nariz, o local está insuportavel...')
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.05)
@@ -476,9 +530,9 @@ print('''
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝    _|
 \033[91m\n''')
 pygame.init()
-pygame.mixer.music.load("Som/somdefase.mp3")
+pygame.mixer.music.load("Historia-game/somdefase.mp3")
 pygame.mixer.music.play()
-texto = ("\n\033[90mPressione Enter para começar a Segunda fase...\033[0m")
+texto = ("\n\033[90mPressione enter para começar a Segunda fase...\033[0m")
 for letra in texto:
     print(letra,end='', flush=True)
     time.sleep(0.03) 
@@ -487,7 +541,7 @@ pygame.mixer.music.stop()
 pygame.quit()
 clear_screen() 
 
-texto = ('\n\033[93mNarrador\033[0m: Uma coisa lhe chama atenção, um envelope de carta perto de um dos corpos, você pega? ')
+texto = ('\033[93mNarrador\033[0m: Uma coisa lhe chama atenção, um envelope de carta perto de um dos corpos, você pega? ')
 
 for letra in texto:
     print(letra, end='', flush=True)
@@ -498,21 +552,21 @@ opcao_carta = input().upper()
 while True:
     if opcao_carta == "NAO":
         time.sleep(pause)
-        texto = ("\n\033[93mNarrador\033[0m: Você não pega a carta...")
+        texto = ("\033[93mNarrador\033[0m: Você não pega a carta...")
         for letra in texto:
             print(letra, end='', flush=True)
             time.sleep(0.05)
         break
     elif opcao_carta == "SIM":
         time.sleep(pause)
-        texto = ("\n\033[93mNarrador\033[0m: Você se agacha perto de um dos corpos e pega o envelope. Ele está vazio, porém não é um envelope comum; a marca de cera, você a reconhece, é da realeza Drusiliana!")
+        texto = ("\033[93mNarrador\033[0m: Você se agacha perto de um dos corpos e pega o envelope. Ele está vazio, porém não é um envelope comum; a marca de cera, você a reconhece, é da realeza Drusiliana!")
         for letra in texto:
             print(letra, end='', flush=True)
             time.sleep(0.05)
         break
     else:
         time.sleep(pause)
-        print("\n\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
+        print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
         continue
 
 texto = ('\n\033[93mNarrador\033[0m: Após isso, você repara em algo muito incomum, em uma das carcaças, você vê aquilo que se assemelha a uma seta, Você investiga? ')
@@ -526,24 +580,167 @@ opcao_seta = input().upper()
 while True:
     if opcao_seta == "NAO":
         time.sleep(pause)
-        texto = ("\n\033[93mNarrador\033[0m: Você não pega a seta, porém consegue ouvir o som de uma das árvores gemendo e rangendo. Uma árvore viva se revela, você não tem escolha senão lutar...")
+        texto = ("\033[93mNarrador\033[0m: Você não pega a seta, porém consegue ouvir o som de uma das árvores gemendo e rangendo. Uma árvore viva se revela, você não tem escolha senão lutar...")
         for letra in texto:
             print(letra, end='', flush=True)
             time.sleep(0.05)
         break
     elif opcao_seta == "SIM":
         time.sleep(pause)
-        texto = ("\n\033[93mNarrador\033[0m: Novamente, você se abaixa e pega até então a desconhecida seta, parece uma flecha comum, mas você não a reconhece de lugar algum. Você a guarda, logo após consegue ouvir o som de uma das árvores gemendo e rangendo. Uma árvore viva se revela, você não tem escolha senão lutar...")
+        texto = ("\033[93mNarrador\033[0m: Novamente, você se abaixa e pega até então a desconhecida seta, parece uma flecha comum, mas você não a reconhece de lugar algum. Você a guarda, logo após consegue ouvir o som de uma das árvores gemendo e rangendo. Uma árvore viva se revela, você não tem escolha senão lutar...")
         for letra in texto:
             print(letra, end='', flush=True)
             time.sleep(0.05)
         break
     else:
         time.sleep(pause)
-        print("\n\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
+        print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
         continue
 
 texto = ('\n\033[93mNarrador\033[0m: Você chega mais perto da árvore e a cada passo ela fica maior, mas você a enfrenta sem hesitar!')
 for letra in texto:
     print(letra, end='', flush=True)
     time.sleep(0.05)
+time.sleep(pause)
+
+clear_screen()
+
+print('''\033[91m
+██████╗  █████╗ ████████╗ █████╗ ██╗     ██╗  ██╗ █████╗ 
+██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██║     ██║  ██║██╔══██╗
+██████╔╝███████║   ██║   ███████║██║     ███████║███████║
+██╔══██╗██╔══██║   ██║   ██╔══██║██║     ██╔══██║██╔══██║
+██████╔╝██║  ██║   ██║   ██║  ██║███████╗██║  ██║██║  ██║
+╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝\033[91m
+          ''')
+pygame.init()
+pygame.mixer.music.load("Historia-game/somdefase.mp3")
+pygame.mixer.music.play()
+texto = ("\n\033[90mPressione enter para começar a batalha...\033[0m")
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.03) 
+input()
+pygame.mixer.music.stop()
+pygame.quit()
+
+clear_screen() 
+
+class Ataque:
+    def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
+        self.tipo = tipo
+        self.dano_fixo = dano_fixo
+        self.multiplicador_min = multiplicador_min
+        self.multiplicador_max = multiplicador_max
+
+    def calcular_dano(self):
+        resultado = rolar_dado()
+        multiplicador = calcular_multiplicador(resultado)
+        dano_total = self.dano_fixo + (self.dano_fixo * multiplicador)
+        return dano_total
+
+def rolar_dado():
+    return random.randint(1, 10)
+
+def calcular_multiplicador(resultado):
+    if resultado < 5:
+        return resultado / 5.0
+    else:
+        return (resultado - 5) / 5.0
+
+class Personagem:
+    def __init__(self, nome, pv, pa):
+        self.nome = nome
+        self.pv = pv
+        self.pa = pa
+
+    def atacar(self, alvo, tipo_ataque):
+        ataque_escolhido = ataques_disponiveis[tipo_ataque]
+        dano_total = ataque_escolhido.calcular_dano()
+        print(f"{self.nome} ataca {alvo.nome} com {tipo_ataque}!")
+        alvo.receber_dano(dano_total)
+        
+    def receber_dano(self, dano):
+        self.pv -= dano
+        if self.pv < 0:
+            self.pv = 0
+        print(f"{self.nome} recebe {dano} de dano. PV do {self.nome} restante: {self.pv}")
+
+danos_fixos = {
+    "ataque direto": 10,
+    "ataque rapido": 5,
+    "ataque pesado": 15,
+}
+
+ataques_disponiveis = {}
+for tipo, valor in danos_fixos.items():
+    multiplicador_min = 1.0
+    multiplicador_max = 2.0
+    ataque = Ataque(tipo, valor, multiplicador_min, multiplicador_max)
+    ataques_disponiveis[tipo] = ataque
+
+print("Ataques Disponíveis:")
+for tipo, ataque in ataques_disponiveis.items():
+    print(f"{tipo}: dano fixo {ataque.dano_fixo}")
+
+P1 = Personagem("\033[94mGuerreiro\033[0m", 100, 20)
+P2 = Personagem("\033[91mÁrvore viva\033[0m", 80, 15)
+
+while P1.pv > 0 and P2.pv > 0:
+    tipo_ataque_escolhido = input(f"\033[93mNarrador\033[0m: Escolha seu ataque (\033[92mataque direto\033[0m/\033[92mataque rápido\033[0m/\033[92mataque pesado\033[0m) para {P1.nome}: ")
+    
+    if tipo_ataque_escolhido in ataques_disponiveis:
+        P1.atacar(P2, tipo_ataque_escolhido)
+    else:
+        print("\033[93mNarrador\033[0m: Tipo de ataque escolhido não está disponível. Digite novamente. ")
+        continue
+    
+    tipo_ataque_monstro = random.choice(list(ataques_disponiveis.keys()))
+    P2.atacar(P1, tipo_ataque_monstro)
+
+    if P1.pv <= 0:
+        print(f"\n\033[93mNarrador\033[0m: {P1.nome} foi derrotado")
+        break
+    elif P2.pv <= 0:
+        print(f"\n\033[93mNarrador\033[0m: {P2.nome} foi derrotado")
+        break
+time.sleep(pause3)
+clear_screen()
+
+texto =('\033[93mNarrador\033[0m: Depois de batalhar com Árvore viva, você vê um homem assustado indo em sua direção, você para e tenta entender o que está acontecendo')
+for letra in texto:
+    print(letra, end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+texto = ('\n\033[92mHomem desconhecido\033[0m: Obrigado senhor por nos salvar dessa maligna e maldita árvore viva, ela assombrava e aterrorizava nosso vilarejo á décadas, depois que o rei de drusila parou de enviar seus soldados para nos apoiar tudo desabou!')
+for letra in texto:
+    print(letra, end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+texto = ('\n\033[94mVocê\033[0m: Mas como assim parou de enviar soldados para cá? a missão e a vontade dele era sempre sevir e proteger todos os vilarejos e o reino dele, porque parar assim do nada?')
+for letra in texto:
+    print(letra, end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+texto = ('\n\033[92mHomem desconhecido\033[0m: Eu também gostaria de saber nobre guerreiro mas o que está acontecendo por agora no reino esta afetando tudo e a todos...')
+for letra in texto:
+    print(letra, end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+clear_screen()
+
+texto = ('\033[93mNarrador\033[0m: você se assusta ao saber o que está acontecendo no reino, pois você não se lembra de quase nada, mas mesmo assim agora sente que tem um propósito e uma misão para seguir! ')
+for letra in texto:
+    print(letra, end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
+
+texto = ('\n\033[93mNarrador\033[0m: Você agora decide ir seguir uma longa viagem até o reino de Drusila para ver o que está acontecendo e porque o rei está sendo tão mal com seu povo...')
+for letra in texto:
+    print(letra, end='', flush=True)
+    time.sleep(0.05)
+time.sleep(pause)
