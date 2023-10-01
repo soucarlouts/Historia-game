@@ -1,23 +1,26 @@
-import keyboard
 import pygame
-import threading
+import pygame_menu
+import keyboard
+import time
 
-# Função para reproduzir o áudio em segundo plano
-def play_audio():
-    pygame.mixer.init()
-    audio_path = "C:\Historia-game\Som\som-teclas.mp3"
-    pygame.mixer.music.load(audio_path)
-    pygame.mixer.music.play()
-    pygame.event.wait()
+pygame.init()
 
-# Iniciar a reprodução de áudio em uma thread separada
-audio_thread = threading.Thread(target=play_audio)
-audio_thread.start()
-print("heeeeeeeelllllllllloooooooooooo world")
+som_letra = pygame.mixer.Sound("Historia-game/som_digitado.mp3")
+volume_tecla = 0.2
+som_letra.set_volume(volume_tecla)
 
-# Aguardar a tecla "Esc" no programa principal
-keyboard.wait("esc")
+texto = "olá, mundo!"
 
-# Aguardar a conclusão da thread de áudio
-audio_thread.join()
+def reproduz_som_de_letra(letra):
+    if letra.isalpha(): 
+        som_letra.play()
+    elif letra.isspace(): 
+        time.sleep(0.05)
+
+for letra in texto:
+    print(letra, end='', flush=True)
+    time.sleep(0.05)
+    reproduz_som_de_letra(letra)
+
+pygame.quit()
 
