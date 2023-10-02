@@ -982,6 +982,7 @@ while True:
             reproduz_som_de_letra(letra)
         
         pygame.quit()
+        time.sleep(pause)
         break
     else:
         time.sleep(pause)
@@ -1172,10 +1173,10 @@ while P1.pv > 0 and P2.pv > 0:
     P2.atacar(P1, tipo_ataque_monstro)
 
     if P1.pv <= 0:
-        print(f"\n\033[93mNarrador\033[0m: {P1.nome} foi derrotado")
+        print(f"\n\033[93mNarrador\033[0m: {P1.nome} foi derrotado, mais cautela da próxima vez guerreiro!")
         break
     elif P2.pv <= 0:
-        print(f"\n\033[93mNarrador\033[0m: {P2.nome} foi derrotado")
+        print(f"\n\033[93mNarrador\033[0m: {P2.nome} foi derrotada com êxito!")
         break
 pygame.mixer.music.stop()
 pygame.quit()
@@ -1251,7 +1252,6 @@ for letra in texto:
     reproduz_som_de_letra(letra)
 pygame.quit()
 time.sleep(pause)
-
 clear_screen()
 
 pygame.init()
