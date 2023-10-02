@@ -860,7 +860,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound("Historia-game/som_digitado.mp3")
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\033[93mNarrador\033[0m: Você segue as marcas de forma quase linear, conforme sua velocidade aumenta, seu coração acompanha seus pés com o peito acelerado. você tem medo do que pode encontrar, seus pensamentos embaralham e sua cabeça o tontea de confusão, você não sabe o que vai achar, ver e encontrar po este lugar maldito...')
+texto = ('\033[93mNarrador\033[0m: Você segue as marcas de forma quase linear, conforme sua velocidade aumenta, seu coração acompanha seus pés com o peito acelerado. você tem medo do que pode encontrar, seus pensamentos embaralham e sua cabeça o tontea de confusão, você não sabe o que vai achar, ver e encontrar por este lugar maldito...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -1270,4 +1270,46 @@ for letra in texto:
     time.sleep(0.05)
     reproduz_som_de_letra(letra)
 pygame.quit()
-time.sleep(pause)
+time.sleep(pause2)
+
+clear_screen()
+
+print('''\033[91m   
+_|     ███████╗██╗███╗   ███╗    ██████╗  ██████╗     ██████╗ ██████╗  ██████╗      ██╗███████╗████████╗ ██████╗      _|
+_|     ██╔════╝██║████╗ ████║    ██╔══██╗██╔═══██╗    ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝╚══██╔══╝██╔═══██╗     _|
+_|     █████╗  ██║██╔████╔██║    ██║  ██║██║   ██║    ██████╔╝██████╔╝██║   ██║     ██║█████╗     ██║   ██║   ██║     _|
+_|     ██╔══╝  ██║██║╚██╔╝██║    ██║  ██║██║   ██║    ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝     ██║   ██║   ██║     _|
+_|     ██║     ██║██║ ╚═╝ ██║    ██████╔╝╚██████╔╝    ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗   ██║   ╚██████╔╝     _|
+_|     ╚═╝     ╚═╝╚═╝     ╚═╝    ╚═════╝  ╚═════╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝   ╚═╝    ╚═════╝      _|\033[91m
+''')
+pygame.init()
+pygame.mixer.music.load("Historia-game/somdefase.mp3")
+pygame.mixer.music.play()
+pygame.mixer.music.stop()
+pygame.quit()
+time.sleep(pause2)
+
+clear_screen()
+
+print('''           \033[94m                                                           
+                      @@@@@@@@@@                @@@@@@@@@@                ##        @@@@@@@@@@                          
+                      @@@@@@@@@@            @@@@@@@@@@@@@@@@            @@@@    @@@@@@@@@@@@@@@@@@                      
+                      @@@@@@@@@@          @@@@@@@@@@@@@@@@@@@@      @@@@@@@@  @@@@@@@@@@@@@@@@                          
+                      @@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@  @@@@@@@@                                  
+                      @@@@@@@@@@        @@@@@@@@        @@@@@@@@  @@@@@@@@@@  @@@@@@@@                                  
+                      @@@@@@@@@@        @@@@            @@@@@@@@  @@@@@@@@@@  @@@@@@@@@@@@@@                            
+                      @@@@@@@@@@        @@              @@@@@@@@  @@@@@@@@@@    @@@@@@@@@@@@@@@@                        
+                      @@@@@@@@@@            @@@@        @@@@@@@@  @@@@@@@@@@      @@@@@@@@@@@@@@@@                      
+                        @@@@@@@@        @@@@@@@@        @@@@@@@@  @@@@@@@@@@              @@@@@@@@##                    
+                        @@@@@@@@@@    @@@@@@@@@@        @@@@@@@@  @@@@@@@@@@                @@@@@@@@                    
+                        @@@@@@@@@@@@@@@@@@@@@@          @@@@@@@@  @@@@@@@@@@    @@@@@@@@@@@@@@@@@@                      
+                          @@@@@@@@@@@@@@@@@@            @@@@@@@@  @@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@                      
+                              @@@@@@@@@@##              @@@@@@@@  @@@@@@@@@@    ##@@@@@@@@@@@@@@ 
+                    \033[94m                       
+                                                                
+''')
+pygame.init()
+pygame.mixer.music.load("Historia-game/som_unis.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play()
+time.sleep(pause2)
