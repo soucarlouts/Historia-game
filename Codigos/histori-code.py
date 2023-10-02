@@ -487,7 +487,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound("Historia-game/som_digitado.mp3")
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava, quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos, e somente por pouco lembrava sua forma antiga. \n\033[93mNarrador\033[0m: Mas você não se lembra do que aconteceu, com apenas seu/sua {armas} e {acessorios} você decide agradecer a mulher estrangeira e partir para tentar descobrir o que aconteceu...\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
+texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava, quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos, e somente por pouco lembrava sua forma antiga. \n\033[93mNarrador\033[0m: Mas você não se lembra do que aconteceu, com apenas seu/sua {armas} e {acessorios} você decide agradecer a mulher.\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -720,6 +720,9 @@ pygame.quit()
 
 clear_screen()   
 
+pygame.init()
+pygame.mixer.music.load("Historia-game/musica_batalha.mp3")
+pygame.mixer.music.play()
 class Ataque:
     def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
         self.tipo = tipo
@@ -798,7 +801,8 @@ while P1.pv > 0 and P2.pv > 0:
     elif P2.pv <= 0:
         print(f"\n\033[93mNarrador\033[0m: {P2.nome} foi derrotado")
         break
-
+pygame.mixer.music.stop()
+pygame.quit()
 time.sleep(pause2)
 clear_screen()
 
@@ -837,6 +841,8 @@ for letra in texto:
     reproduz_som_de_letra(letra)
 pygame.quit()
 time.sleep(pause)
+
+clear_screen()
 
 pygame.init()
 som_letra = pygame.mixer.Sound("Historia-game/som_digitado.mp3")
@@ -962,7 +968,7 @@ while True:
         som_letra = pygame.mixer.Sound("Historia-game/som_digitado.mp3")
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
-        texto = "\033[93mNarrador\033[0m: Você se agacha perto de um dos corpos e pega o envelope vazio.\n\033[93mNarrador\033[0m: Porém não é um envelope comum; a marca de cera, você à reconhece, é da realeza Drusiliana!"
+        texto = "\033[93mNarrador\033[0m: Você se agacha perto de um dos corpos e pega o envelope vazio.\n\033[93mNarrador\033[0m: Porem não é um envelope comum; a marca de cera, você à reconhece, é da realeza Drusiliana!"
 
         def reproduz_som_de_letra(letra):
             if letra.isalpha(): 
@@ -981,6 +987,8 @@ while True:
         time.sleep(pause)
         print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
         continue
+
+clear_screen()
 
 pygame.init()
 som_letra = pygame.mixer.Sound("Historia-game/som_digitado.mp3")
@@ -1088,6 +1096,9 @@ pygame.quit()
 
 clear_screen() 
 
+pygame.init()
+pygame.mixer.music.load("Historia-game/musica_batalha.mp3")
+pygame.mixer.music.play()
 class Ataque:
     def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
         self.tipo = tipo
@@ -1166,6 +1177,8 @@ while P1.pv > 0 and P2.pv > 0:
     elif P2.pv <= 0:
         print(f"\n\033[93mNarrador\033[0m: {P2.nome} foi derrotado")
         break
+pygame.mixer.music.stop()
+pygame.quit()
 time.sleep(pause3)
 clear_screen()
 
