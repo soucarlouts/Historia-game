@@ -1,5 +1,12 @@
 import random
 
+class Armas:
+    def __init__(self, danos_ataques, classe, nivel):
+        self.danos_ataques = danos_ataques
+        self.classe = classe
+        self.nivel = nivel
+EspadaGrama = Armas
+EspadaGrama(15, 1.0, 3.0)
 class Ataque:
     def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
         self.tipo = tipo
@@ -78,3 +85,4 @@ while P1.pv > 0 and P2.pv > 0:
     elif P2.pv <= 0:
         print(f"{P2.nome} foi derrotado")
         break
+print(f"{EspadaGrama}")
