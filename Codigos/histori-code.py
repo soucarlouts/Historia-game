@@ -29,6 +29,9 @@ pause5 = 5.0
 armas = None
 acessorios = None
 
+class punhetinh:
+    def __init__(self) -> None:
+        pass
 
 def rolar_dado():
     return random.randint(1, 6)
