@@ -15,6 +15,10 @@ class Arma:
 
     def get_ataque(self):
         return self.ataque
+    
+class ataques:
+    def __init__(self) -> None:
+        pass
 
 EspadaTal = Arma("Ataque Corte!!!" , 10)
 pause = 1.0
