@@ -15,10 +15,6 @@ class Arma:
 
     def get_ataque(self):
         return self.ataque
-    
-class ataques:
-    def __init__(self) -> None:
-        pass
 
 EspadaTal = Arma("Ataque Corte!!!" , 10)
 pause = 1.0
@@ -28,7 +24,6 @@ pause4 = 10.0
 pause5 = 5.0
 armas = None
 acessorios = None
-
 
 def rolar_dado():
     return random.randint(1, 6)
