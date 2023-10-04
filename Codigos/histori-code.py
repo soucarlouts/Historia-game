@@ -163,7 +163,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("")
+som_letra = pygame.mixer.Sound("Som/som_digitado.mp3")
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[93mNarrador\033[0m: A floresta tem um ecossistema próprio, místico e abriga várias raças diferentes, os ēlifis aqui nascidos eram criados como porcos para o abate...\n\033[93mNarrador\033[0m: Essa prática foi mantida por mais de 3 séculos, os ēlifis ao decorrer desses anos criaram um ódio pelos humanos!\n\033[93mNarrador\033[0m: Que no momento, não pode ser simplesmente esquecido...')
