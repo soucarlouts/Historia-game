@@ -85,4 +85,3 @@ while P1.pv > 0 and P2.pv > 0:
     elif P2.pv <= 0:
         print(f"{P2.nome} foi derrotado")
         break
-print(f"{EspadaGrama}")
