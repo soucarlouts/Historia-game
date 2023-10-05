@@ -1178,7 +1178,7 @@ print('''\033[91m
 ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝\033[91m
           ''')
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/som_digitado.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione enter para começar a batalha...\033[0m")
 for letra in texto:
