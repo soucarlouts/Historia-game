@@ -818,7 +818,7 @@ print('''\033[91m
 ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝\033[91m
           ''')
 pygame.init()
-pygame.mixer.music.load("Som/musica_batalha.mp3")
+pygame.mixer.music.load("Som/somdefase.mp3")
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione enter para começar a batalha...\033[0m")
 for letra in texto:
@@ -831,7 +831,7 @@ pygame.quit()
 clear_screen()   
 
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/som_digitado.mp3")
+pygame.mixer.music.load("Som/musica_batalha.mp3")
 pygame.mixer.music.play()
 class Ataque:
     def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
@@ -1178,7 +1178,7 @@ print('''\033[91m
 ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝\033[91m
           ''')
 pygame.init()
-pygame.mixer.music.load("Som/musica_batalha.mp3")
+pygame.mixer.music.load("O jogo/Som/som_digitado.mp3")
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione enter para começar a batalha...\033[0m")
 for letra in texto:
@@ -1191,7 +1191,7 @@ pygame.quit()
 clear_screen() 
 
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/som_digitado.mp3")
+pygame.mixer.music.load("Som/musica_batalha.mp3")
 pygame.mixer.music.play()
 class Ataque:
     def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
