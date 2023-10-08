@@ -352,7 +352,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[95mGarota\033[0m: Bom, por enquanto, vamos lavar essas vestimentas e limpar seus ferimentos, você esta na pior...')
+texto = ('\033[95mGarota\033[0m: Bom, por enquanto, vamos lavar essas vestimentas e limpar seus ferimentos, você esta na pior...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
