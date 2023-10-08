@@ -144,7 +144,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\033[93mNarrador\033[0m: A grande floresta de drusila, que contem as grandes árvores frutiferas, belas e perfumadas, é um labirinto gigante!\n\033[93mNarrador\033[0m: A única forma de realmente conhecer esta floresta, é morando ou caçando aqui e isso é mostrado pelos ēlifi nome dos nativos élficos da floresta.\n\033[93mNarrador\033[0m: Aqui caçam, pescam, e plantam suas árvores, são seres esguios e difíceis de localizar, mas ja foram avistados colhendo suas frutas...')
+texto = ('\033[93mNarrador\033[0m: A grande floresta de drusila, que contem as grandes árvores frutiferas, belas e perfumadas, é um labirinto gigante!\n\033[93mNarrador\033[0m: A única forma de realmente conhecer esta floresta, é morando ou caçando aqui.\n\033[93mNarrador\033[0m: E isso é mostrado pelos ēlifi nome dos nativos élficos da floresta.\n\033[93mNarrador\033[0m: Aqui caçam, pescam, e plantam suas árvores, são seres esguios e difíceis de localizar, mas ja foram avistados colhendo suas frutas...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -161,7 +161,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound("Som/som_digitado.mp3")
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[93mNarrador\033[0m: A floresta tem um ecossistema próprio, místico e abriga várias raças diferentes, os ēlifis aqui nascidos eram criados como porcos para o abate...\n\033[93mNarrador\033[0m: Essa prática foi mantida por mais de 3 séculos, os ēlifis ao decorrer desses anos criaram um ódio pelos humanos!\n\033[93mNarrador\033[0m: Que no momento, não pode ser simplesmente esquecido...')
+texto = ('\n\033[93mNarrador\033[0m: A floresta tem um ecossistema próprio, místico e abriga várias raças diferentes.\n\033[93mNarrador\033[0m: Os ēlifis aqui nascidos eram criados como porcos para o abate...\n\033[93mNarrador\033[0m: Essa prática foi mantida por mais de 3 séculos, os ēlifis ao decorrer desses anos criaram um ódio pelos humanos!\n\033[93mNarrador\033[0m: Que no momento, não pode ser simplesmente esquecido...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -172,8 +172,8 @@ for letra in texto:
     time.sleep(0.05)
     reproduz_som_de_letra(letra)
 pygame.quit()
-time.sleep(pause)
 
+time.sleep(pause)
 clear_screen()
 
 print('''\033[91m
@@ -958,7 +958,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[93mNarrador\033[0m: Ao adentrar mais a floresta você vê um labirinto de árvores, você mal entrou e ja se sente perdido tendo apenas as marcas de garra nas árvores.\n\033[93mNarrador\033[0m: O som ominoso que você ouve ja é o suficiente para sentir o mau agouro que lhe espera, porem, você deve prosseguir...\n\033[93mNarrador\033[0m: Afinal, não é como se lhe sobrasse muita escolha...')
+texto = ('\n\033[93mNarrador\033[0m: Ao adentrar mais a floresta você vê um labirinto de árvores.\n\033[93mNarrador\033[0m: Você mal entrou e ja se sente perdido tendo apenas as marcas de garra nas árvores.\n\033[93mNarrador\033[0m: O som ominoso que você ouve ja é o suficiente para sentir o mau agouro que lhe espera, porem, você deve prosseguir...\n\033[93mNarrador\033[0m: Afinal, não é como se lhe sobrasse muita escolha...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
