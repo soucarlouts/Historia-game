@@ -2,7 +2,6 @@ import time
 import random
 import os
 import pygame
-import pygame_menu
 import keyboard
 
 class Arma:
@@ -25,13 +24,21 @@ pause5 = 5.0
 armas = None
 acessorios = None
 
+#Todas as musicas aqui
+SomUnis = '../Som/som_unis.mp3'
+SomFase = '../Som/somdefase.mp3'
+SomDrusila = '../Som/drusila_audiogame.mp3'
+SomDigitado = '../Som/som_digitado.mp3'
+SomFinal = '../Som/musica_final.mp3'
+SomBatalha = '../Som/musica_batalha.mp3'
+
 def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/som_unis.mp3")
-pygame.mixer.music.load("O jogo/Som/somdefase.mp3")
-pygame.mixer.music.load("O jogo/Som/drusila_audiogame.mp3")
+pygame.mixer.music.load(SomUnis)
+pygame.mixer.music.load(SomFase)
+pygame.mixer.music.load(SomDrusila)
 pygame.mixer.music.play()
 
 def fade_in_text(texto, velocidade):
@@ -72,7 +79,7 @@ print('''           \033[94m
                                                                 
 ''')
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/som_unis.mp3")
+pygame.mixer.music.load(SomUnis)
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play()
 time.sleep(pause2)
@@ -80,7 +87,7 @@ time.sleep(pause2)
 clear_screen()
 
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/drusila_audiogame.mp3")
+pygame.mixer.music.load(SomDrusila)
 pygame.mixer.music.play()
 texto = '''\033[91m
  _|       ██████╗ ██████╗ ██╗   ██╗███████╗██╗██╗      █████╗        _|
@@ -108,7 +115,7 @@ pygame.quit()
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mAncião\033[0m: Oh Olá, como estás nobre guerreiro? diga-me, o que tu procuras? aventura? diversão? batalhas? ouro ou glória? HAHAHAHAHA!!!\n\033[93mAncião\033[0m: Veremos como você se sairá nessas terras traiçoeiras, lute, conquiste e saqueie, mostre a este lugar maldito e agourento do que você é feito!')
@@ -135,13 +142,13 @@ print('''\033[91m
 ╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
  \033[91m''')
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/somdefase.mp3")
+pygame.mixer.music.load(SomFase)
 pygame.mixer.music.play()
 input('\n\033[90mPróximo...\033[0m')
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mNarrador\033[0m: A grande floresta de drusila, que contem as grandes árvores frutiferas, belas e perfumadas, é um labirinto gigante!\n\033[93mNarrador\033[0m: A única forma de realmente conhecer esta floresta, é morando ou caçando aqui.\n\033[93mNarrador\033[0m: E isso é mostrado pelos ēlifi nome dos nativos élficos da floresta.\n\033[93mNarrador\033[0m: Aqui caçam, pescam, e plantam suas árvores, são seres esguios e difíceis de localizar, mas ja foram avistados colhendo suas frutas...')
@@ -158,7 +165,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[93mNarrador\033[0m: A floresta tem um ecossistema próprio, místico e abriga várias raças diferentes.\n\033[93mNarrador\033[0m: Os ēlifis aqui nascidos eram criados como porcos para o abate...\n\033[93mNarrador\033[0m: Essa prática foi mantida por mais de 3 séculos, os ēlifis ao decorrer desses anos criaram um ódio pelos humanos!\n\033[93mNarrador\033[0m: Que no momento, não pode ser simplesmente esquecido...')
@@ -185,13 +192,13 @@ print('''\033[91m
       ╚═════╝     ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝ ╚═════╝ 
 \033[91m''')
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/somdefase.mp3")
+pygame.mixer.music.load(SomFase)
 pygame.mixer.music.play()
 input('\n\033[90mPróximo...\033[0m')
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[95mGarota\033[0m: Oh! Finalmente, você despertou está machucado e essas vestimentas, Ough! fedem, e muito!')
@@ -208,7 +215,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[95mGarota\033[0m: Diga-me qual é o teu nome? ')
@@ -226,7 +233,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\033[95mGarota\033[0m: Pelo que vejo em suas vestimentas parece que servia o exército de drusila!\n\033[95mGarota\033[0m: Mas qual classe você era, {nome}?\n')
@@ -262,7 +269,7 @@ while True:
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[95mGarota\033[0m: Ah, mas é claro, com essas vestimentas era óbvio!')
@@ -279,7 +286,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\n\033[95mGarota\033[0m: O que fazes aqui {nome}?')
@@ -296,7 +303,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[94mVocê\033[0m: Eu... eu não me lembro.')
@@ -313,7 +320,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[95mGarota\033[0m: O senhor não se lembra de nada? nada mesmo?')
@@ -330,7 +337,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[94mVocê\033[0m: Só lembro de saber quem sou, mas não de estar aqui, agora...')
@@ -349,7 +356,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[95mGarota\033[0m: Bom, por enquanto, vamos lavar essas vestimentas e limpar seus ferimentos, você esta na pior...')
@@ -366,7 +373,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[94mVocê\033[0m: Quem é você, e por quê esta me ajudando?')
@@ -383,7 +390,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[95mGarota\033[0m: Sou apenas uma garota do campo, o ajudei pois senti que era a coisa certa a se fazer...')
@@ -400,7 +407,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[93mNarrador\033[0m: Você se sente grato pela ajuda da garota, deseja agradece-la? ')
@@ -422,7 +429,7 @@ while True:
     if opcao_agr == "NAO":
         time.sleep(pause)
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = "\033[93mNarrador\033[0m: Você fica quieto..."
@@ -445,7 +452,7 @@ while True:
         time.sleep(pause)
 
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = "\033[93mNarrador\033[0m: Você agradece pela serventia da garota e se sente bem com isso..."
@@ -473,7 +480,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[95mGarota\033[0m: Bom, agora que estás indo se limpar, pegue seus equipamentos e armas e dê um trato neles pois estão bem imundos!')
@@ -506,7 +513,7 @@ classe_escolhida = classes
 armas, acessorios = obter_armas_e_acessorios(classe_escolhida)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\033[93mNarrador\033[0m: Você pega seu/sua {armas} e limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
@@ -522,7 +529,7 @@ for letra in texto:
 pygame.quit()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\033[93mNarrador\033[0m: Você ajusta seu/sua {acessorios} e reflete como tudo isso aconteceu...\n\033[93mNarrador\033[0m: Mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
@@ -539,7 +546,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava; quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos... \n\033[93mNarrador\033[0m: Mas com apenas seu/sua {armas} e {acessorios} você decide ir em frente.\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
@@ -558,7 +565,7 @@ time.sleep(pause2)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\033[95mGarota\033[0m: Bom {nome}, depois dessa longa caminhada no bosque só posso lhe trazer até aqui.\n\033[95mGarota\033[0m: Boa sorte e que a luz de \033[4mThalmor\033[0m brilhe sobre ti!')
@@ -575,7 +582,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\n\033[93mNarrador\033[0m: E assim começa sua jornada, com apenas seu/sua {armas} em mãos e trapos em seu corpo você decide investigar...')
@@ -603,7 +610,7 @@ print('''
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝     ╚═╝     _| 
 \033[91m\n''')
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/somdefase.mp3")
+pygame.mixer.music.load(SomFase)
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione enter para começar a primeira fase...\033[0m")
 for letra in texto:
@@ -615,7 +622,7 @@ pygame.quit()
 clear_screen()          
       
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mNarrador\033[0m: você está na entrada de uma floresta cercada por árvores frutiferas!\n\033[93mNarrador\033[0m: Suas frutas são de cores variadas e exalam o melhor perfume que seu nariz ja sentiu!')
@@ -632,7 +639,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = "\n\033[93mNarrador\033[0m: você está com fome, deseja comer? "
@@ -653,7 +660,7 @@ while True:
         time.sleep(pause)
 
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = "\033[93mNarrador\033[0m: Você decide seguir em frente..."
@@ -676,7 +683,7 @@ while True:
         time.sleep(pause)
 
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = ("\033[93mNarrador\033[0m: Você pega uma fruta estranha, aparência de maçã, porem com coloração de madeira. Você a morde, seu suco e sabor o revigoram!")
@@ -702,7 +709,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mNarrador\033[0m: Você olha e caminha mais um pouco ao seu redor e vê marcas de batalha nas árvores.\n\033[93mNarrador\033[0m: O que parecem ser garras, com grandes árvores dilaceradas em volta, você investiga? ')
@@ -724,7 +731,7 @@ while True:
     if opcao_investigar == "NAO":
         time.sleep(pause)
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = "\033[93mNarrador\033[0m: Você continua a caminhar pela floresta sem dar muita atenção aos detalhes..."
@@ -747,7 +754,7 @@ while True:
         time.sleep(pause)
 
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = "\033[93mNarrador\033[0m: você caminha lentamente pela floresta atentando-se aos detalhes e estragos das madeiras e folhas!"
@@ -774,7 +781,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\n\033[93mNarrador\033[0m: Enquanto você caminha pela floresta, ouve pegadas se aproximando, é algo grande!\n\033[93mNarrador\033[0m: Você saca sua/seu {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!')
@@ -791,7 +798,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = (f'\n\033[93mNarrador\033[0m: E um enorme urso ensanguentado pula de fora da floresta!\n\033[93mNarrador\033[0m: Em sua pelagem densa à marcas de espadas apenas olhar para tal criatura o enche de medo...')
@@ -818,7 +825,7 @@ print('''\033[91m
 ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝\033[91m
           ''')
 pygame.init()
-pygame.mixer.music.load("Som/somdefase.mp3")
+pygame.mixer.music.load(SomFase)
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione enter para começar a batalha...\033[0m")
 for letra in texto:
@@ -831,7 +838,7 @@ pygame.quit()
 clear_screen()   
 
 pygame.init()
-pygame.mixer.music.load("Som/musica_batalha.mp3")
+pygame.mixer.music.load(SomBatalha)
 pygame.mixer.music.play()
 class Ataque:
     def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
@@ -917,7 +924,7 @@ time.sleep(pause2)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mNarrador\033[0m: Neste mesmo instante uma bela e luminosa fada aparece acima de seus olhos e fala com você!')
@@ -936,7 +943,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[95mFada\033[0m: Por sorte nesta grande batalha os deuses tiveram piedade de você guerreiro!\n\033[95mFada\033[0m: Pois vi suas ações e não esta nada bom para enfrentar as criaturas maléficas desta terra...\n\033[95mFada\033[0m: Não se acostume com milagres, pois este lugar é traiçoeiro!')
@@ -955,7 +962,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[93mNarrador\033[0m: Ao adentrar mais a floresta você vê um labirinto de árvores.\n\033[93mNarrador\033[0m: Você mal entrou e ja se sente perdido tendo apenas as marcas de garra nas árvores.\n\033[93mNarrador\033[0m: O som ominoso que você ouve ja é o suficiente para sentir o mau agouro que lhe espera, porem, você deve prosseguir...\n\033[93mNarrador\033[0m: Afinal, não é como se lhe sobrasse muita escolha...')
@@ -974,7 +981,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mNarrador\033[0m: Você segue as marcas de forma quase linear.\n\033[93mNarrador\033[0m: Seu coração acompanha seus pés com o peito acelerado. você tem medo do que pode encontrar...\n\033[93mNarrador\033[0m: Seus pensamentos embaralham e sua cabeça o tontea de confusão, você não sabe o que vai achar, ver e encontrar por este lugar maldito...')
@@ -991,7 +998,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[93mNarrador\033[0m: Você sente medo, ao adentrar a floresta você sente um cheiro podre de carne.\n\033[93mNarrador\033[0m: Depois de andar em direção ao cheiro, você vê corpos dilacerados, armaduras que outrorá foram brilhantes e reluzentes...\n\033[93mNarrador\033[0m: Você tampa sua boca e nariz; o local está insuportável...')
@@ -1019,7 +1026,7 @@ print('''
  _|     ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝    _|
 \033[91m\n''')
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/somdefase.mp3")
+pygame.mixer.music.load(SomFase)
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione enter para começar a Segunda fase...\033[0m")
 for letra in texto:
@@ -1031,7 +1038,7 @@ pygame.quit()
 clear_screen() 
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mNarrador\033[0m: Uma coisa lhe chama atenção, um envelope de carta perto de um dos corpos, você pega? ')
@@ -1052,7 +1059,7 @@ while True:
     if opcao_carta == "NAO":
         time.sleep(pause)
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = "\033[93mNarrador\033[0m: Você não pega a carta..."
@@ -1075,7 +1082,7 @@ while True:
         time.sleep(pause)
 
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = "\033[93mNarrador\033[0m: Você se agacha perto de um dos corpos e pega um envelope vazio.\n\033[93mNarrador\033[0m: Porem não é um envelope comum; a marca de cera, você à reconhece, é da realeza Drusiliana!"
@@ -1102,7 +1109,7 @@ while True:
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[93mNarrador\033[0m: Após isso, você repara em algo muito incomum em uma das carcaças.\n\033[93mNarrador\033[0m: Você vê aquilo que se assemelha a uma flecha, Você investiga? ')
@@ -1124,7 +1131,7 @@ while True:
         time.sleep(pause)
 
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = ("\033[93mNarrador\033[0m: Você não pega a flecha, porém consegue ouvir o som de uma das árvores gemendo e rangendo.\n\033[93mNarrador\033[0m: Uma árvore viva se revela, você não tem escolha senão lutar...")
@@ -1145,7 +1152,7 @@ while True:
         time.sleep(pause)
 
         pygame.init()
-        som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+        som_letra = pygame.mixer.Sound(SomDigitado)
         volume_tecla = 0.1
         som_letra.set_volume(volume_tecla)
         texto = ("\033[93mNarrador\033[0m: Novamente, você se abaixa e pega até então a desconhecida flecha, parece uma flecha comum.\n\033[93mNarrador\033[0m: Você não a reconhece de lugar algum, e à guarda.\n\033[93mNarrador\033[0m: logo após consegue ouvir o som de uma das árvores gemendo e rangendo. Uma árvore viva se revela, você não tem escolha senão lutar...")
@@ -1178,7 +1185,7 @@ print('''\033[91m
 ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝\033[91m
           ''')
 pygame.init()
-pygame.mixer.music.load("Som/somdefase.mp3")
+pygame.mixer.music.load(SomFase)
 pygame.mixer.music.play()
 texto = ("\n\033[90mPressione enter para começar a batalha...\033[0m")
 for letra in texto:
@@ -1191,7 +1198,7 @@ pygame.quit()
 clear_screen() 
 
 pygame.init()
-pygame.mixer.music.load("Som/musica_batalha.mp3")
+pygame.mixer.music.load(SomBatalha)
 pygame.mixer.music.play()
 class Ataque:
     def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
@@ -1277,7 +1284,7 @@ time.sleep(pause3)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto =('\033[93mNarrador\033[0m: Depois de batalhar com Árvore viva, você vê um homem assustado indo em sua direção...\n\033[93mNarrador\033[0m: Você para e tenta entender o que está acontecendo...')
@@ -1296,7 +1303,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[92mHomem desconhecido\033[0m: Obrigado senhor por nos salvar dessa malígna e maldita árvore viva!\n\033[92mHomem desconhecido\033[0m: Ela assombrava e aterrorizava nosso vilarejo á décadas!\n\033[92mHomem desconhecido\033[0m: Depois que o rei de drusila parou de enviar seus soldados para nos apoiar tudo desabou...')
@@ -1313,7 +1320,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[94mVocê\033[0m: Mas como assim parou de enviar soldados para cá?\n\033[94mVocê\033[0m: A missão e a vontade dele era sempre sevir e proteger todos os vilarejos e o reino dele...\n\033[94mVocê\033[0m: Porque parar assim do nada?')
@@ -1330,7 +1337,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[92mHomem desconhecido\033[0m: Eu também gostaria de saber nobre guerreiro...\n\033[92mHomem desconhecido\033[0m: Mas o que está acontecendo por agora no reino esta afetando tudo e a todos...')
@@ -1348,7 +1355,7 @@ time.sleep(pause)
 clear_screen()
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mNarrador\033[0m: Você se assusta ao saber o que está acontecendo no reino, pois você não se lembra de quase nada!\n\033[93mNarrador\033[0m: Mas mesmo assim agora sente que tem um propósito e uma missão para seguir! ')
@@ -1365,7 +1372,7 @@ pygame.quit()
 time.sleep(pause)
 
 pygame.init()
-som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
+som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[93mNarrador\033[0m: Você agora decide ir seguir uma longa viagem até o reino de Drusila para ver o que está acontecendo...\n\033[93mNarrador\033[0m: E ver o por quê do rei está sendo tão mal com seu povo!')
@@ -1392,7 +1399,7 @@ _|     ██║     ██║██║ ╚═╝ ██║    █████�
 _|     ╚═╝     ╚═╝╚═╝     ╚═╝    ╚═════╝  ╚═════╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝   ╚═╝    ╚═════╝      _|\033[91m
 ''')
 pygame.init()
-pygame.mixer.music.load("Som/musica_final.mp3")
+pygame.mixer.music.load(SomFinal)
 pygame.mixer.music.play()
 time.sleep(pause5)
 
@@ -1416,7 +1423,7 @@ print('''           \033[94m
                                                                 
 ''')
 pygame.init()
-pygame.mixer.music.load("O jogo/Som/som_unis.mp3")
+pygame.mixer.music.load(SomUnis)
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play()
 time.sleep(pause2)
