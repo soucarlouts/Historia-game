@@ -25,12 +25,12 @@ armas = None
 acessorios = None
 
 #Todas as musicas aqui
-SomUnis = '../Som/som_unis.mp3'
-SomFase = '../Som/somdefase.mp3'
-SomDrusila = '../Som/drusila_audiogame.mp3'
-SomDigitado = '../Som/som_digitado.mp3'
-SomFinal = '../Som/musica_final.mp3'
-SomBatalha = '../Som/musica_batalha.mp3'
+SomUnis = 'Som/som_unis.mp3'
+SomFase = 'Som/somdefase.mp3'
+SomDrusila = 'Som/drusila_audiogame.mp3'
+SomDigitado = 'Som/som_digitado.mp3'
+SomFinal = 'Som/musica_final.mp3'
+SomBatalha = 'Som/musica_batalha.mp3'
 
 def rolar_dado():
     return random.randint(1, 6)
