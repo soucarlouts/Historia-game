@@ -1368,7 +1368,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound("O jogo/Som/som_digitado.mp3")
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[93mNarrador\033[0m: Você agora decide ir seguir uma longa viagem até o reino de Drusila para ver o que está acontecendo...\n\033[93mNarrador\033[0m: E ver o por quê do rei está sendo tão mal com seu povo!')
+texto = ('\n\033[93mNarrador\033[0m: Você agora decide ir seguir uma longa viagem até o reino de Drusila para ver o que está acontecendo...\n\033[93mNarrador\033[0m: E ver o por quê do rei está agindo e sendo tão mal com seu povo!')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
