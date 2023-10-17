@@ -501,22 +501,22 @@ clear_screen()
 def obter_armas_e_acessorios(classe):
     match classe:
         case "Paladino":
-            return "Espada", "Armadura"
+            return "Espada", "Armadura", "sua"
         case "Feiticeiro":
-            return "Cajado", "Amuleto"
+            return "Cajado", "Amuleto", "seu"
         case "Arqueiro":
-            return "Arco", "Aljava"
+            return "Arco", "Aljava", "seu"
         case _:
             return "Classe não reconhecida", "Acessórios não disponíveis"
 
 classe_escolhida = classes
-armas, acessorios = obter_armas_e_acessorios(classe_escolhida)
+armas, acessorios, pronome = obter_armas_e_acessorios(classe_escolhida)
 
 pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\033[93mNarrador\033[0m: Você pega seu/sua {armas} e limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
+texto = (f'\033[93mNarrador\033[0m: Você pega {pronome} {armas} e limpa com cautela, à marcas e arranhões, mas você segue em frente...\n')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -532,7 +532,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\033[93mNarrador\033[0m: Você ajusta seu/sua {acessorios} e reflete como tudo isso aconteceu...\n\033[93mNarrador\033[0m: Mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
+texto = (f'\033[93mNarrador\033[0m: Você ajusta {pronome} {acessorios} e reflete como tudo isso aconteceu...\n\033[93mNarrador\033[0m: Mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -549,7 +549,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava; quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos... \n\033[93mNarrador\033[0m: Mas com apenas seu/sua {armas} e {acessorios} você decide ir em frente.\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
+texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava; quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos... \n\033[93mNarrador\033[0m: Mas com apenas {pronome} {armas} e {acessorios} você decide ir em frente.\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -585,7 +585,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\n\033[93mNarrador\033[0m: E assim começa sua jornada, com apenas seu/sua {armas} em mãos e trapos em seu corpo você decide investigar...')
+texto = (f'\n\033[93mNarrador\033[0m: E assim começa sua jornada, com apenas {pronome} {armas} em mãos e trapos em seu corpo você decide investigar...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -784,7 +784,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\n\033[93mNarrador\033[0m: Enquanto você caminha pela floresta, ouve pegadas se aproximando, é algo grande!\n\033[93mNarrador\033[0m: Você saca sua/seu {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!')
+texto = (f'\n\033[93mNarrador\033[0m: Enquanto você caminha pela floresta, ouve pegadas se aproximando, é algo grande!\n\033[93mNarrador\033[0m: Você saca {pronome} {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -902,6 +902,7 @@ P2 = Personagem("\033[91mUrso ensanguentado\033[0m", 80, 10)
 
 while P1.pv > 0 and P2.pv > 0:
     tipo_ataque_escolhido = input(f"\033[93mNarrador\033[0m: Escolha e digite um ataque para {P1.nome}: ")
+    clear_screen()
     
     if tipo_ataque_escolhido in ataques_disponiveis:
         P1.atacar(P2, tipo_ataque_escolhido)
@@ -1262,6 +1263,7 @@ P2 = Personagem("\033[91mÁrvore viva\033[0m", 80, 10)
 
 while P1.pv > 0 and P2.pv > 0:
     tipo_ataque_escolhido = input(f"\033[93mNarrador\033[0m: Escolha e digite um ataque para {P1.nome}: ")
+    clear_screen()
     
     if tipo_ataque_escolhido in ataques_disponiveis:
         P1.atacar(P2, tipo_ataque_escolhido)
@@ -1427,3 +1429,4 @@ pygame.mixer.music.load(SomUnis)
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play()
 time.sleep(pause2)
+input("\n\033[90mPressione Enter para finalizar o jogo...\033[0m")
