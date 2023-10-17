@@ -151,7 +151,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\033[93mNarrador\033[0m: A grande floresta de drusila, que contem as grandes árvores frutiferas, belas e perfumadas, é um labirinto gigante!\n\033[93mNarrador\033[0m: A única forma de realmente conhecer esta floresta, é morando ou caçando aqui.\n\033[93mNarrador\033[0m: E isso é mostrado pelos ēlifi nome dos nativos élficos da floresta.\n\033[93mNarrador\033[0m: Aqui caçam, pescam, e plantam suas árvores, são seres esguios e difíceis de localizar, mas ja foram avistados colhendo suas frutas...')
+texto = ('\033[93mNarrador\033[0m: A grande floresta de drusila, que contem as grandes árvores frutiferas, belas e perfumadas, é um labirinto gigante!\n\033[93mNarrador\033[0m: A única forma de realmente conhecer esta floresta, é morando ou caçando aqui.\n\033[93mNarrador\033[0m: E isso é mostrado pelos ēlifi nome dos nativos élficos da floresta...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -168,7 +168,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[93mNarrador\033[0m: A floresta tem um ecossistema próprio, místico e abriga várias raças diferentes.\n\033[93mNarrador\033[0m: Os ēlifis aqui nascidos eram criados como porcos para o abate...\n\033[93mNarrador\033[0m: Essa prática foi mantida por mais de 3 séculos, os ēlifis ao decorrer desses anos criaram um ódio pelos humanos!\n\033[93mNarrador\033[0m: Que no momento, não pode ser simplesmente esquecido...')
+texto = ('\n\033[93mNarrador\033[0m: A floresta tem um ecossistema próprio, místico e abriga várias raças diferentes.\n\033[93mNarrador\033[0m: Os ēlifis aqui nascidos eram criados pelos humanos como porcos para o abate...\n\033[93mNarrador\033[0m: Essa prática foi mantida por mais de 3 séculos, e ao decorrer desses anos, os ēlifis criaram um ódio pelos humanos!\n\033[93mNarrador\033[0m: Que no momento, não pode ser simplesmente esquecido...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -901,7 +901,7 @@ P1 = Personagem("\033[94mGuerreiro\033[0m", 100, 20)
 P2 = Personagem("\033[91mUrso ensanguentado\033[0m", 80, 10)
 
 while P1.pv > 0 and P2.pv > 0:
-    tipo_ataque_escolhido = input(f"\033[93mNarrador\033[0m: Escolha um ataque para {P1.nome}: ")
+    tipo_ataque_escolhido = input(f"\033[93mNarrador\033[0m: Escolha e digite um ataque para {P1.nome}: ")
     
     if tipo_ataque_escolhido in ataques_disponiveis:
         P1.atacar(P2, tipo_ataque_escolhido)
@@ -1261,7 +1261,7 @@ P1 = Personagem("\033[94mGuerreiro\033[0m", 100, 20)
 P2 = Personagem("\033[91mÁrvore viva\033[0m", 80, 10)
 
 while P1.pv > 0 and P2.pv > 0:
-    tipo_ataque_escolhido = input(f"\033[93mNarrador\033[0m: Escolha um ataque para {P1.nome}: ")
+    tipo_ataque_escolhido = input(f"\033[93mNarrador\033[0m: Escolha e digite um ataque para {P1.nome}: ")
     
     if tipo_ataque_escolhido in ataques_disponiveis:
         P1.atacar(P2, tipo_ataque_escolhido)
