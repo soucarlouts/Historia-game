@@ -158,6 +158,7 @@ def reproduz_som_de_letra(letra):
     elif letra.isspace(): 
         time.sleep(0.05)
 for letra in texto:
+    
     print(letra, end='', flush=True)
     time.sleep(0.05)
     reproduz_som_de_letra(letra)
