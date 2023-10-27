@@ -4,6 +4,15 @@ import os
 import pygame
 import keyboard
 
+#90m cinza
+#91m vermelho
+#92m verde
+#93m amarelo
+#94m azul
+#95m roxo
+#96m azul claro
+#97m branco
+
 class Arma:
     def __init__(self, dano, ataque):
         self.dano = dano
@@ -15,6 +24,90 @@ class Arma:
     def get_ataque(self):
         return self.ataque
 
+
+class Ataque:
+    def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
+        self.tipo = tipo
+        self.dano_fixo = dano_fixo
+        self.multiplicador_min = multiplicador_min
+        self.multiplicador_max = multiplicador_max
+
+    def calcular_dano(self):
+        resultado = rolar_dado()
+        multiplicador = calcular_multiplicador(resultado)
+        dano_total = self.dano_fixo + (self.dano_fixo * multiplicador)
+        return dano_total
+
+
+class Ataque:
+    def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
+        self.tipo = tipo
+        self.dano_fixo = dano_fixo
+        self.multiplicador_min = multiplicador_min
+        self.multiplicador_max = multiplicador_max
+
+    def calcular_dano(self):
+        resultado = rolar_dado()
+        multiplicador = calcular_multiplicador(resultado)
+        dano_total = self.dano_fixo + (self.dano_fixo * multiplicador)
+        return dano_total
+
+
+def rolar_dado():
+    return random.randint(1, 10)
+def calcular_multiplicador(resultado):
+    if resultado < 5:
+        return resultado / 5.0
+    else:
+        return (resultado - 5) / 5.0
+
+class Personagem:
+    def __init__(self, nome, pv, pa):
+        self.nome = nome
+        self.pv = pv
+        self.pa = pa
+
+    def atacar(self, alvo, tipo_ataque):
+        ataque_escolhido = ataques_disponiveis[tipo_ataque]
+        dano_total = ataque_escolhido.calcular_dano()
+        print(f"{self.nome} ataca {alvo.nome} com {tipo_ataque}!")
+        alvo.receber_dano(dano_total)
+
+    def receber_dano(self, dano):
+        self.pv -= dano
+        if self.pv < 0:
+            self.pv = 0
+        print(f"{self.nome} recebe {dano} de dano. PV do {self.nome} restante: {self.pv}")
+
+def rolar_dado():
+    return random.randint(1, 10)
+
+
+def calcular_multiplicador(resultado):
+    if resultado < 5:
+        return resultado / 5.0
+    else:
+        return (resultado - 5) / 5.0
+
+
+class Personagem:
+    def __init__(self, nome, pv, pa):
+        self.nome = nome
+        self.pv = pv
+        self.pa = pa
+
+    def atacar(self, alvo, tipo_ataque):
+        ataque_escolhido = ataques_disponiveis[tipo_ataque]
+        dano_total = ataque_escolhido.calcular_dano()
+        print(f"{self.nome} ataca {alvo.nome} com {tipo_ataque}!")
+        alvo.receber_dano(dano_total)
+
+    def receber_dano(self, dano):
+        self.pv -= dano
+        if self.pv < 0:
+            self.pv = 0
+        print(f"{self.nome} recebe {dano} de dano. PV do {self.nome} restante: {self.pv}")
+
 EspadaTal = Arma("Ataque Corte!!!" , 10)
 pause = 1.0
 pause2 = 2.0
@@ -25,12 +118,12 @@ armas = None
 acessorios = None
 
 #Todas as musicas aqui
-SomUnis = 'Som/som_unis.mp3'
-SomFase = 'Som/somdefase.mp3'
-SomDrusila = 'Som/drusila_audiogame.mp3'
-SomDigitado = 'Som/som_digitado.mp3'
-SomFinal = 'Som/musica_final.mp3'
-SomBatalha = 'Som/musica_batalha.mp3'
+SomUnis = '_internal/Som/som_unis.mp3'
+SomFase = '_internal/Som/somdefase.mp3'
+SomDrusila = '_internal/Som/drusila_audiogame.mp3'
+SomDigitado = '_internal/Som/som_digitado.mp3'
+SomFinal = '_internal/Som/musica_final.mp3'
+SomBatalha = '_internal/Som/musica_batalha.mp3'
 
 def rolar_dado():
     return random.randint(1, 6)
@@ -46,20 +139,22 @@ def fade_in_text(texto, velocidade):
         print(texto[i], end='', flush=True)
         time.sleep(velocidade)
 
-#90m cinza
-#91m vermelho
-#92m verde
-#93m amarelo
-#94m azul
-#95m roxo
-#96m azul claro
-#97m branco
-
 def clear_screen():
     if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
+
+def obter_armas_e_acessorios(classe):
+    match classe:
+        case "Paladino":
+            return "Espada", "Armadura", "sua"
+        case "Feiticeiro":
+            return "Cajado", "Amuleto", "seu"
+        case "Arqueiro":
+            return "Arco", "Aljava", "seu"
+        case _:
+            return "Classe não reconhecida", "Acessórios não disponíveis"
 
 print('''           \033[94m                                                           
                       @@@@@@@@@@                @@@@@@@@@@                ##        @@@@@@@@@@                          
@@ -120,9 +215,9 @@ volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mAncião\033[0m: Oh Olá, como estás nobre guerreiro? diga-me, o que tu procuras? aventura? diversão? batalhas? ouro ou glória? HAHAHAHAHA!!!\n\033[93mAncião\033[0m: Veremos como você se sairá nessas terras traiçoeiras, lute, conquiste e saqueie, mostre a este lugar maldito e agourento do que você é feito!')
 def reproduz_som_de_letra(letra):
-    if letra.isalpha(): 
+    if letra.isalpha():
         som_letra.play()
-    elif letra.isspace(): 
+    elif letra.isspace():
         time.sleep(0.05)
 for letra in texto:
     print(letra, end='', flush=True)
@@ -158,6 +253,7 @@ def reproduz_som_de_letra(letra):
     elif letra.isspace(): 
         time.sleep(0.05)
 for letra in texto:
+    
     print(letra, end='', flush=True)
     time.sleep(0.05)
     reproduz_som_de_letra(letra)
@@ -498,17 +594,6 @@ time.sleep(pause)
 
 clear_screen()
 
-def obter_armas_e_acessorios(classe):
-    match classe:
-        case "Paladino":
-            return "Espada", "Armadura", "sua"
-        case "Feiticeiro":
-            return "Cajado", "Amuleto", "seu"
-        case "Arqueiro":
-            return "Arco", "Aljava", "seu"
-        case _:
-            return "Classe não reconhecida", "Acessórios não disponíveis"
-
 classe_escolhida = classes
 armas, acessorios, pronome = obter_armas_e_acessorios(classe_escolhida)
 
@@ -840,45 +925,6 @@ clear_screen()
 pygame.init()
 pygame.mixer.music.load(SomBatalha)
 pygame.mixer.music.play()
-class Ataque:
-    def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
-        self.tipo = tipo
-        self.dano_fixo = dano_fixo
-        self.multiplicador_min = multiplicador_min
-        self.multiplicador_max = multiplicador_max
-
-    def calcular_dano(self):
-        resultado = rolar_dado()
-        multiplicador = calcular_multiplicador(resultado)
-        dano_total = self.dano_fixo + (self.dano_fixo * multiplicador)
-        return dano_total
-
-def rolar_dado():
-    return random.randint(1, 10)
-
-def calcular_multiplicador(resultado):
-    if resultado < 5:
-        return resultado / 5.0
-    else:
-        return (resultado - 5) / 5.0
-
-class Personagem:
-    def __init__(self, nome, pv, pa):
-        self.nome = nome
-        self.pv = pv
-        self.pa = pa
-
-    def atacar(self, alvo, tipo_ataque):
-        ataque_escolhido = ataques_disponiveis[tipo_ataque]
-        dano_total = ataque_escolhido.calcular_dano()
-        print(f"{self.nome} ataca {alvo.nome} com {tipo_ataque}!")
-        alvo.receber_dano(dano_total)
-        
-    def receber_dano(self, dano):
-        self.pv -= dano
-        if self.pv < 0:
-            self.pv = 0
-        print(f"{self.nome} recebe {dano} de dano. PV do {self.nome} restante: {self.pv}")
 
 danos_fixos = {
     "ataque direto": 10,
@@ -1201,45 +1247,6 @@ clear_screen()
 pygame.init()
 pygame.mixer.music.load(SomBatalha)
 pygame.mixer.music.play()
-class Ataque:
-    def __init__(self, tipo, dano_fixo, multiplicador_min, multiplicador_max):
-        self.tipo = tipo
-        self.dano_fixo = dano_fixo
-        self.multiplicador_min = multiplicador_min
-        self.multiplicador_max = multiplicador_max
-
-    def calcular_dano(self):
-        resultado = rolar_dado()
-        multiplicador = calcular_multiplicador(resultado)
-        dano_total = self.dano_fixo + (self.dano_fixo * multiplicador)
-        return dano_total
-
-def rolar_dado():
-    return random.randint(1, 10)
-
-def calcular_multiplicador(resultado):
-    if resultado < 5:
-        return resultado / 5.0
-    else:
-        return (resultado - 5) / 5.0
-
-class Personagem:
-    def __init__(self, nome, pv, pa):
-        self.nome = nome
-        self.pv = pv
-        self.pa = pa
-
-    def atacar(self, alvo, tipo_ataque):
-        ataque_escolhido = ataques_disponiveis[tipo_ataque]
-        dano_total = ataque_escolhido.calcular_dano()
-        print(f"{self.nome} ataca {alvo.nome} com {tipo_ataque}!")
-        alvo.receber_dano(dano_total)
-        
-    def receber_dano(self, dano):
-        self.pv -= dano
-        if self.pv < 0:
-            self.pv = 0
-        print(f"{self.nome} recebe {dano} de dano. PV do {self.nome} restante: {self.pv}")
 
 danos_fixos = {
     "ataque direto": 10,
