@@ -1031,7 +1031,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\033[93mNarrador\033[0m: Você segue as marcas de forma quase linear.\n\033[93mNarrador\033[0m: Seu coração acompanha seus pés com o peito acelerado. você tem medo do que pode encontrar...\n\033[93mNarrador\033[0m: Seus pensamentos embaralham e sua cabeça o tontea de confusão, você não sabe o que vai achar, ver e encontrar por este lugar maldito...')
+texto = ('\033[93mNarrador\033[0m: Você segue as marcas de forma quase linear.\n\033[93mNarrador\033[0m: Seu coração acompanha seus pés com o peito acelerado. você tem medo do que pode encontrar...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -1048,7 +1048,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[93mNarrador\033[0m: Você sente medo, ao adentrar a floresta, você sente um cheiro podre de carne.\n\033[93mNarrador\033[0m: Depois de andar em direção ao cheiro, você vê corpos dilacerados, armaduras que outrorá foram brilhantes e reluzentes...\n\033[93mNarrador\033[0m: Você tampa sua boca e nariz; o local está insuportável...')
+texto = ('\n\033[93mNarrador\033[0m: Você sente medo ao adentrar a floresta, você sente um cheiro podre de carne.\n\033[93mNarrador\033[0m: Depois de andar em direção ao cheiro, você vê corpos dilacerados, armaduras que outrorá foram brilhantes e reluzentes...\n\033[93mNarrador\033[0m: Você tampa sua boca e nariz; o local está insuportável...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
