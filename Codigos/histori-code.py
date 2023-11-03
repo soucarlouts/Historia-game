@@ -118,12 +118,12 @@ armas = None
 acessorios = None
 
 #Todas as musicas aqui
-SomUnis = '_internal/Som/som_unis.mp3'
-SomFase = '_internal/Som/somdefase.mp3'
-SomDrusila = '_internal/Som/drusila_audiogame.mp3'
-SomDigitado = '_internal/Som/som_digitado.mp3'
-SomFinal = '_internal/Som/musica_final.mp3'
-SomBatalha = '_internal/Som/musica_batalha.mp3'
+SomUnis = 'Som/som_unis.mp3'
+SomFase = 'Som/somdefase.mp3'
+SomDrusila = 'Som/drusila_audiogame.mp3'
+SomDigitado = 'Som/som_digitado.mp3'
+SomFinal = 'Som/musica_final.mp3'
+SomBatalha = 'Som/musica_batalha.mp3'
 
 def rolar_dado():
     return random.randint(1, 6)
@@ -1012,7 +1012,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[93mNarrador\033[0m: Ao adentrar mais a floresta você vê um labirinto de árvores.\n\033[93mNarrador\033[0m: Você mal entrou e ja se sente perdido tendo apenas as marcas de garra nas árvores.\n\033[93mNarrador\033[0m: O som ominoso que você ouve ja é o suficiente para sentir o mau agouro que lhe espera, porem, você deve prosseguir...\n\033[93mNarrador\033[0m: Afinal, não é como se lhe sobrasse muita escolha...')
+texto = ('\n\033[93mNarrador\033[0m: Ao adentrar mais à floresta você vê um labirinto de árvores.\n\033[93mNarrador\033[0m: Você mal entrou e ja se sente perdido tendo apenas as marcas de garra nas árvores.\n\033[93mNarrador\033[0m: O som ominoso que você ouve ja é o suficiente para sentir o mau agouro que lhe espera, porem, você deve prosseguir...\n\033[93mNarrador\033[0m: Afinal, não é como se lhe sobrasse muita escolha...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -1048,7 +1048,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[93mNarrador\033[0m: Você sente medo, ao adentrar a floresta você sente um cheiro podre de carne.\n\033[93mNarrador\033[0m: Depois de andar em direção ao cheiro, você vê corpos dilacerados, armaduras que outrorá foram brilhantes e reluzentes...\n\033[93mNarrador\033[0m: Você tampa sua boca e nariz; o local está insuportável...')
+texto = ('\n\033[93mNarrador\033[0m: Você sente medo, ao adentrar a floresta, você sente um cheiro podre de carne.\n\033[93mNarrador\033[0m: Depois de andar em direção ao cheiro, você vê corpos dilacerados, armaduras que outrorá foram brilhantes e reluzentes...\n\033[93mNarrador\033[0m: Você tampa sua boca e nariz; o local está insuportável...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
