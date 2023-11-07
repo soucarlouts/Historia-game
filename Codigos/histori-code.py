@@ -52,7 +52,6 @@ class Ataque:
         dano_total = self.dano_fixo + (self.dano_fixo * multiplicador)
         return dano_total
 
-
 def rolar_dado():
     return random.randint(1, 10)
 def calcular_multiplicador(resultado):
@@ -118,12 +117,12 @@ armas = None
 acessorios = None
 
 #Todas as musicas aqui
-SomUnis = 'Som/som_unis.mp3'
-SomFase = 'Som/somdefase.mp3'
-SomDrusila = 'Som/drusila_audiogame.mp3'
-SomDigitado = 'Som/som_digitado.mp3'
-SomFinal = 'Som/musica_final.mp3'
-SomBatalha = 'Som/musica_batalha.mp3'
+SomUnis = '_internal/Som/som_unis.mp3'
+SomFase = '_internal/Som/somdefase.mp3'
+SomDrusila = '_internal/Som/drusila_audiogame.mp3'
+SomDigitado = '_internal/Som/som_digitado.mp3'
+SomFinal = '_internal/Som/musica_final.mp3'
+SomBatalha = ('_internal/Som/musica_batalha.mp3')
 
 def rolar_dado():
     return random.randint(1, 6)
@@ -148,11 +147,11 @@ def clear_screen():
 def obter_armas_e_acessorios(classe):
     match classe:
         case "Paladino":
-            return "Espada", "Armadura", "sua"
+            return "Espada", "Armadura", "sua", "sua"
         case "Feiticeiro":
-            return "Cajado", "Amuleto", "seu"
+            return "Cajado", "Amuleto", "seu", "seu"
         case "Arqueiro":
-            return "Arco", "Aljava", "seu"
+            return "Arco", "Aljava", "seu" ,"sua"
         case _:
             return "Classe não reconhecida", "Acessórios não disponíveis"
 
@@ -196,7 +195,7 @@ texto = '''\033[91m
                    Um mundo mágico de imaginação, 
                 com textos que prendem seus jogadores
                     e exploram suas capacidades!\033[91m\n'''
-                
+
 velocidade = 0.010
 fade_in_text(texto, velocidade)
 texto = "\n\033[90mPressione Enter para começar o jogo...\033[0m"
@@ -248,12 +247,12 @@ volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\033[93mNarrador\033[0m: A grande floresta de drusila, que contem as grandes árvores frutiferas, belas e perfumadas, é um labirinto gigante!\n\033[93mNarrador\033[0m: A única forma de realmente conhecer esta floresta, é morando ou caçando aqui.\n\033[93mNarrador\033[0m: E isso é mostrado pelos ēlifi nome dos nativos élficos da floresta...')
 def reproduz_som_de_letra(letra):
-    if letra.isalpha(): 
+    if letra.isalpha():
         som_letra.play()
-    elif letra.isspace(): 
+    elif letra.isspace():
         time.sleep(0.05)
 for letra in texto:
-    
+
     print(letra, end='', flush=True)
     time.sleep(0.05)
     reproduz_som_de_letra(letra)
@@ -266,9 +265,9 @@ volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
 texto = ('\n\033[93mNarrador\033[0m: A floresta tem um ecossistema próprio, místico e abriga várias raças diferentes.\n\033[93mNarrador\033[0m: Os ēlifis aqui nascidos eram criados pelos humanos como porcos para o abate...\n\033[93mNarrador\033[0m: Essa prática foi mantida por mais de 3 séculos, e ao decorrer desses anos, os ēlifis criaram um ódio pelos humanos!\n\033[93mNarrador\033[0m: Que no momento, não pode ser simplesmente esquecido...')
 def reproduz_som_de_letra(letra):
-    if letra.isalpha(): 
+    if letra.isalpha():
         som_letra.play()
-    elif letra.isspace(): 
+    elif letra.isspace():
         time.sleep(0.05)
 for letra in texto:
     print(letra, end='', flush=True)
@@ -570,7 +569,8 @@ while True:
     else:
         time.sleep(pause)
         print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
-        continue
+        opcao_agr = input().upper()
+
 time.sleep(pause)
 
 clear_screen()
@@ -595,7 +595,7 @@ time.sleep(pause)
 clear_screen()
 
 classe_escolhida = classes
-armas, acessorios, pronome = obter_armas_e_acessorios(classe_escolhida)
+armas, acessorios, pronome, pronome2 = obter_armas_e_acessorios(classe_escolhida)
 
 pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
@@ -617,7 +617,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\033[93mNarrador\033[0m: Você ajusta {pronome} {acessorios} e reflete como tudo isso aconteceu...\n\033[93mNarrador\033[0m: Mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
+texto = (f'\033[93mNarrador\033[0m: Você ajusta {pronome2} {acessorios} e reflete como tudo isso aconteceu...\n\033[93mNarrador\033[0m: Mas tudo estava tão confuso que você só seguiu ao banheiro para se limpar sem dar muita atenção...\n')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -634,7 +634,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava; quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos... \n\033[93mNarrador\033[0m: Mas com apenas {pronome} {armas} e {acessorios} você decide ir em frente.\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
+texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava; quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos... \n\033[93mNarrador\033[0m: Mas com apenas {pronome} {armas} e {pronome2}{acessorios} você decide ir em frente.\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
