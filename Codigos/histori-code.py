@@ -1315,7 +1315,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[92mHomem desconhecido\033[0m: Obrigado senhor por nos salvar dessa malígna e maldita árvore viva!\n\033[92mHomem desconhecido\033[0m: Ela assombrava e aterrorizava nosso vilarejo á décadas!\n\033[92mHomem desconhecido\033[0m: Depois que o rei de drusila parou de enviar seus soldados para nos apoiar tudo desabou...')
+texto = ('\n\033[92mHomem desconhecido\033[0m: Obrigado senhor por nos salvar dessa malígna e maldita árvore viva!\n\033[92mHomem desconhecido\033[0m: Ela assombrava e aterrorizava nosso vilarejo há décadas!\n\033[92mHomem desconhecido\033[0m: Depois que o rei de drusila parou de enviar seus soldados para nos apoiar tudo desabou...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -1349,7 +1349,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[92mHomem desconhecido\033[0m: Eu também gostaria de saber nobre guerreiro...\n\033[92mHomem desconhecido\033[0m: Mas o que está acontecendo por agora no reino esta afetando tudo e a todos...')
+texto = ('\n\033[92mHomem desconhecido\033[0m: Eu também gostaria de saber nobre guerreiro...\n\033[92mHomem desconhecido\033[0m: Mas o que está acontecendo por agora no reino está afetando tudo e à todos...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -1384,7 +1384,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\n\033[93mNarrador\033[0m: Você agora decide ir seguir uma longa viagem até o reino de Drusila para ver o que está acontecendo...\n\033[93mNarrador\033[0m: E ver o por quê do rei está agindo e sendo tão mal com seu povo!')
+texto = ('\n\033[93mNarrador\033[0m: Você agora decide ir seguir uma longa viagem até o reino de Drusila para ver o que está acontecendo...\n\033[93mNarrador\033[0m: E ver o porquê do rei está agindo e sendo tão mal com seu povo!')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
