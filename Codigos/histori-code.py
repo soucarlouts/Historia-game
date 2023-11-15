@@ -1411,7 +1411,9 @@ print('''\033[91m
 pygame.init()
 pygame.mixer.music.load(SomFase)
 pygame.mixer.music.play()
-time.sleep(pause5)
+time.sleep(pause3)
+
+clear_screen()
 
 pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
