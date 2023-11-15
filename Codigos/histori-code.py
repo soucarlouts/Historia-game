@@ -1399,6 +1399,25 @@ time.sleep(pause2)
 
 clear_screen()
 
+pygame.init()
+som_letra = pygame.mixer.Sound(SomDigitado)
+volume_tecla = 0.1
+som_letra.set_volume(volume_tecla)
+texto = ('\033[93mNarrador\033[0m: Nesta parte da história do jogo, vimos que o guerreiro além de buscar reconhecer quem era \033[93mNarrador\033[0m: Também buscava ajudar e apoiar moradores e outras pessoas de onde passava \033[93mNarrador\033[0m: Ajudando com sua força de vontadade eliminando inimigos para o bem de todos! \033[93mNarrador\033[0m: Retirando todo o mal do caminho trazendo a paz novamente para todas as vilas...')
+def reproduz_som_de_letra(letra):
+    if letra.isalpha(): 
+        som_letra.play()
+    elif letra.isspace(): 
+        time.sleep(0.05)
+for letra in texto:
+    print(letra, end='', flush=True)
+    time.sleep(0.05)
+    reproduz_som_de_letra(letra)
+pygame.quit()
+time.sleep(pause2)
+
+clear_screen()
+
 print('''\033[91m   
 _|     ███████╗██╗███╗   ███╗    ██████╗  ██████╗     ██████╗ ██████╗  ██████╗      ██╗███████╗████████╗ ██████╗      _|
 _|     ██╔════╝██║████╗ ████║    ██╔══██╗██╔═══██╗    ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝╚══██╔══╝██╔═══██╗     _|
