@@ -644,7 +644,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava; quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos... \n\033[93mNarrador\033[0m: Mas com apenas {pronome} {armas} e {pronome2}{acessorios} você decide ir em frente.\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
+texto = (f'\033[93mNarrador\033[0m: A mulher estrangeira lava suas vestimentas enquanto você se limpava; quando saiu de seu banho achou suas vestimentas limpas!\n\033[93mNarrador\033[0m: Porem no estado que estavam, eram apenas trapos... \n\033[93mNarrador\033[0m: Mas com apenas {pronome} {armas} e {pronome2} {acessorios} você decide ir em frente.\n\033[93mNarrador\033[0m: Mas antes voce à pede para lhe mostrar onde o achou...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -879,7 +879,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = (f'\n\033[93mNarrador\033[0m: Enquanto você caminha pela floresta, ouve pegadas se aproximando, é algo grande!\n\033[93mNarrador\033[0m: Você saca {pronome} {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!')
+texto = (f'\n\033[93mNarrador\033[0m: Enquanto você caminha pela floresta, ouve pegadas se aproximando, é algo grande!\n\033[93mNarrador\033[0m: Você pega {pronome} {armas} e logo em seguida ouve um grunido que faz seu peito resonar com medo!')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
@@ -1206,7 +1206,7 @@ while True:
         pygame.quit()
         break
     elif opcao_seta == "SIM":
-        time.sleep(pause)
+        time.sleep(pause2)
 
         pygame.init()
         som_letra = pygame.mixer.Sound(SomDigitado)
@@ -1227,7 +1227,7 @@ while True:
         pygame.quit()
         break
     else:
-        time.sleep(pause)
+        time.sleep(pause2)
         print("\033[93mNarrador\033[0m: Opção inválida. Por favor, escolha entre 'SIM' ou 'NAO'.")
         continue
 
@@ -1405,12 +1405,11 @@ for letra in texto:
     time.sleep(0.05)
     reproduz_som_de_letra(letra)
 pygame.quit()
-time.sleep(pause2)
+time.sleep(pause)
 
 clear_screen()
 
 print('''\033[91m
-       
        ██████╗ ██████╗ ███╗   ██╗ ██████╗██╗     ██╗   ██╗███████╗ █████╗  ██████╗ 
       ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║     ██║   ██║██╔════╝██╔══██╗██╔═══██╗
       ██║     ██║   ██║██╔██╗ ██║██║     ██║     ██║   ██║███████╗███████║██║   ██║
@@ -1421,15 +1420,20 @@ print('''\033[91m
 pygame.init()
 pygame.mixer.music.load(SomFase)
 pygame.mixer.music.play()
-time.sleep(pause3)
-
+texto = ("\n\033[90mPressione enter para avançar...\033[0m")
+for letra in texto:
+    print(letra,end='', flush=True)
+    time.sleep(0.03) 
+input()
+pygame.mixer.music.stop()
+pygame.quit()
 clear_screen()
 
 pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\033[93mNarrador\033[0m: Nesta parte da história do jogo, vimos que o guerreiro além de buscar reconhecer quem era \033[93mNarrador\033[0m: Também buscava ajudar e apoiar moradores e outras pessoas de onde passava \033[93mNarrador\033[0m: Ajudando com sua força de vontadade eliminando inimigos para o bem de todos! \033[93mNarrador\033[0m: Retirando todo o mal do caminho trazendo a paz novamente para todas as vilas...')
+texto = ('\033[93mNarrador\033[0m: Nesta parte da história do jogo, vimos que o guerreiro além de buscar reconhecer quem era\n\033[93mNarrador\033[0m: Também buscava ajudar e apoiar moradores e outras pessoas de onde passava\n\033[93mNarrador\033[0m: Ajudando com sua força de vontadade eliminando inimigos para o bem de todos!\n\033[93mNarrador\033[0m: Retirando todo o mal do caminho trazendo a paz novamente para todas as vilas...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
