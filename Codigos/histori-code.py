@@ -346,11 +346,21 @@ pygame.quit()
 opcoes_classes = ['Paladino', 'Feiticeiro', 'Arqueiro']
 
 while True:
-    texto = ('Escolha uma classe \033[92m(Paladino, Feiticeiro, Arqueiro): \033[0m')
+    pygame.init()
+    som_letra = pygame.mixer.Sound(SomDigitado)
+    volume_tecla = 0.1
+    som_letra.set_volume(volume_tecla)
+    texto = "Escolha uma classe \033[92m(Paladino, Feiticeiro, Arqueiro): \033[0m"
+    def reproduz_som_de_letra(letra):
+        if letra.isalpha(): 
+            som_letra.play()
+        elif letra.isspace(): 
+            time.sleep(0.05)
     for letra in texto:
         print(letra, end='', flush=True)
         time.sleep(0.05)
-        
+    pygame.quit()
+    time.sleep(pause) 
     classes = input()
 
     classes = classes.capitalize()
