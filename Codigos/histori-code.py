@@ -128,7 +128,6 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
-pygame.mixer.music.load()
 pygame.mixer.music.load(SomFase)
 pygame.mixer.music.load(SomDrusila)
 pygame.mixer.music.play()
