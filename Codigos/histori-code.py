@@ -128,7 +128,6 @@ def rolar_dado():
     return random.randint(1, 6)
 resultado_dados = rolar_dado()
 pygame.init()
-pygame.mixer.music.load()
 pygame.mixer.music.load(SomFase)
 pygame.mixer.music.load(SomDrusila)
 pygame.mixer.music.play()
@@ -1433,7 +1432,7 @@ pygame.init()
 som_letra = pygame.mixer.Sound(SomDigitado)
 volume_tecla = 0.1
 som_letra.set_volume(volume_tecla)
-texto = ('\033[93mNarrador\033[0m: Nesta parte da história do jogo, vimos que o guerreiro além de buscar reconhecer quem era...\n\033[93mNarrador\033[0m: Também buscava ajudar e apoiar moradores e outras pessoas de onde passava!\n\033[93mNarrador\033[0m: Ajudando com sua força de vontadade eliminando inimigos para o bem de todos...\n\033[93mNarrador\033[0m: Retirando todo o mal do caminho trazendo a paz novamente para todas as vilas...')
+texto = ('\033[93mNarrador\033[0m: Nesta parte da história do jogo, vimos que o guerreiro além de buscar reconhecer quem era...\n\033[93mNarrador\033[0m: Também buscava ajudar e apoiar moradores e outras pessoas de onde passava!\n\033[93mNarrador\033[0m: Ajudando com sua força de vontadade eliminando inimigos para o bem de todos...\n\033[93mNarrador\033[0m: Retirando todo o mal do caminho, levando a paz novamente para todas as vilas...')
 def reproduz_som_de_letra(letra):
     if letra.isalpha(): 
         som_letra.play()
